@@ -4,3 +4,4 @@ pandas
 lxml
 minio
 python-dotenv
+markdownify

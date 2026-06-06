@@ -4,6 +4,7 @@ __pycache__/
 *.pyc
 .pytest_cache/
 data/*.json
+data/*.jsonl
 bronze/raw/*.json
 scraper_run.log
 .DS_Store
