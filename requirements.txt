@@ -5,3 +5,4 @@ lxml
 minio
 python-dotenv
 markdownify
+sentence-transformers
