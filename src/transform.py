@@ -356,11 +356,45 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Nao grava JSONL local",
     )
+    parser.add_argument(
+        "--load-postgres",
+        action="store_true",
+        help="Carrega chunks textuais no PostgreSQL",
+    )
+    parser.add_argument(
+        "--load-qdrant",
+        action="store_true",
+        help="Gera embeddings BGE-M3 e carrega vetores no Qdrant",
+    )
+    parser.add_argument(
+        "--load-gold",
+        action="store_true",
+        help="Atalho para --load-postgres --load-qdrant",
+    )
+    parser.add_argument(
+        "--embedding-model",
+        default=None,
+        help="Modelo SentenceTransformer para embeddings",
+    )
+    parser.add_argument(
+        "--embedding-device",
+        default=None,
+        help="Dispositivo do SentenceTransformer, como cpu ou cuda",
+    )
+    parser.add_argument(
+        "--embedding-batch-size",
+        type=int,
+        default=16,
+        help="Tamanho do lote para embeddings",
+    )
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
+    load_postgres = args.load_postgres or args.load_gold or args.load_qdrant
+    load_qdrant = args.load_qdrant or args.load_gold
+
     records = run_transform(
         source=args.source,
         prefix=args.prefix,
@@ -371,9 +405,33 @@ def main() -> None:
         bucket_name=args.bucket,
     )
 
+    if load_postgres:
+        from postgres_loader import insert_chunks
+
+        records = insert_chunks(records)
+        print(f"Chunks carregados no PostgreSQL: {len(records)} registros.")
+
     if not args.no_output:
         count = write_jsonl(records, args.output)
         print(f"Chunks salvos em {args.output} ({count} registros).")
+
+    if load_qdrant:
+        from embedding import BGEM3Embedder
+        from qdrant_loader import upsert_embeddings
+
+        embedder = BGEM3Embedder(
+            model_name=args.embedding_model,
+            device=args.embedding_device,
+        )
+        embeddings = embedder.encode_texts(
+            (record["texto"] for record in records),
+            batch_size=args.embedding_batch_size,
+        )
+        total = upsert_embeddings(records, embeddings=embeddings)
+        print(
+            f"Embeddings carregados no Qdrant: {total} pontos "
+            f"({embedder.dimension} dimensoes)."
+        )
 
 
 if __name__ == "__main__":

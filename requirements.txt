@@ -6,3 +6,5 @@ minio
 python-dotenv
 markdownify
 sentence-transformers
+psycopg[binary]
+qdrant-client

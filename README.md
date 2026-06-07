@@ -1,61 +1,68 @@
 # USP Data Lake
 
-Pipeline de Engenharia de Dados para coleta, armazenamento e processamento de notícias do [Jornal da USP](https://jornal.usp.br/).
+Pipeline de Engenharia de Dados para coleta, armazenamento, transformacao e vetorizacao de noticias do [Jornal da USP](https://jornal.usp.br/).
 
-## Primeira entrega
-
-Fluxo implementado:
+## Fluxo implementado
 
 ```
-Jornal da USP → Web Scraping → JSON local → MinIO (Bronze)
+Jornal USP
+    ↓
+Web Scraping
+    ↓
+JSON bruto
+    ↓
+MinIO (Bronze)
+    ↓
+Limpeza HTML -> Markdown
+    ↓
+Chunks (1200 caracteres / 200 overlap)
+    ↓
+Embeddings BGE-M3
+    ↓
+PostgreSQL (texto) + Qdrant (vetores)
 ```
 
-### Camada Bronze
-
-Dados brutos, sem limpeza ou transformação — exatamente como extraídos do site.
-
-## Estrutura do projeto
+## Estrutura
 
 ```
 usp-data-lake/
-├── data/                  # staging local (raw_news.json agregado)
-├── bronze/raw/            # arquivos bronze individuais
+├── data/                    # staging local ignorado pelo Git
+├── bronze/raw/              # JSONs bronze locais ignorados pelo Git
 ├── src/
-│   ├── scraper.py         # coleta notícias do Jornal da USP
-│   ├── minio_client.py    # cliente MinIO
-│   └── upload_bronze.py   # upload para camada Bronze
+│   ├── scraper.py           # coleta noticias do Jornal da USP
+│   ├── minio_client.py      # cliente MinIO
+│   ├── upload_bronze.py     # upload dos JSONs para MinIO
+│   ├── transform.py         # leitura MinIO, limpeza e chunking
+│   ├── chunking.py          # regra 1200/200
+│   ├── embedding.py         # embeddings com BAAI/bge-m3
+│   ├── postgres_loader.py   # armazenamento textual Gold
+│   └── qdrant_loader.py     # armazenamento vetorial Gold
 ├── docker/
-│   └── docker-compose.yml # MinIO local
-├── notebooks/
+│   └── docker-compose.yml
+├── docker-compose.yml       # MinIO + PostgreSQL + Qdrant
 ├── requirements.txt
 └── .env.example
 ```
 
-## Pré-requisitos
-
-- Python 3.10+
-- Docker e Docker Compose
-
 ## Instalação
 
 ```bash
-cd usp-data-lake
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
 ```
 
-## Subir o MinIO
+## Subir infraestrutura
 
 ```bash
-cd docker
 docker compose up -d
 ```
 
-- API S3: `http://localhost:9000`
-- Console web: `http://localhost:9001`
-- Credenciais padrão: `minioadmin` / `minioadmin123`
+- MinIO API: `http://localhost:9000`
+- MinIO console: `http://localhost:9001`
+- PostgreSQL: `localhost:5432`
+- Qdrant: `http://localhost:6333`
 
 ## Executar o pipeline
 
@@ -65,71 +72,79 @@ docker compose up -d
 python src/scraper.py --limit 10
 ```
 
-Gera:
+Gera JSON bruto em `data/raw_news.json` e arquivos individuais em `bronze/raw/`.
 
-- `data/raw_news.json` — todas as notícias em um arquivo
-- `bronze/raw/usp_news_001.json`, `usp_news_002.json`, ... — um arquivo por notícia
-
-Campos extraídos:
-
-| Campo | Descrição |
-|---|---|
-| `titulo` | Título da notícia |
-| `autor` | Autor |
-| `data` | Data de publicação |
-| `categoria` | Categoria |
-| `conteudo` | HTML bruto do corpo |
-| `url` | URL da notícia |
-
-### 2. Upload para MinIO (Bronze)
+### 2. Bronze no MinIO
 
 ```bash
 python src/upload_bronze.py
 ```
 
-Envia os arquivos de `bronze/raw/` para o bucket `bronze` com prefixo `raw/`:
+Envia os arquivos para o bucket `bronze`, prefixo `raw/`.
 
-```
-bronze/raw/usp_news_001.json
-```
+### 3. Transformacao Silver
 
-## Validar a entrega
-
-1. **Scraping:** verifique que `data/raw_news.json` contém notícias com todos os campos.
-2. **Bronze local:** confira os arquivos em `bronze/raw/`.
-3. **MinIO:** acesse `http://localhost:9001`, entre no bucket `bronze` e confirme os objetos em `raw/`.
-
-## Arquitetura (visão geral)
-
-```
-Jornal USP
-    ↓
-Web Scraping          ← você está aqui
-    ↓
-MinIO (Bronze)        ← você está aqui
-    ↓
-Silver (limpeza)      ← futuro
-    ↓
-Gold (chunks + embeddings) ← futuro
-    ↓
-Qdrant + Postgres + IA
+```bash
+python src/transform.py --source minio --output data/chunks.jsonl
 ```
 
-## Variáveis de ambiente
+Essa etapa le os JSONs do MinIO, limpa o HTML, converte o conteudo para Markdown e gera chunks de 1200 caracteres com overlap de 200.
 
-Copie `.env.example` para `.env`:
+Para testar sem MinIO, usando os JSONs locais:
 
+```bash
+python src/transform.py --source local --limit 2 --output data/chunks.jsonl
 ```
+
+### 4. Gold em PostgreSQL e Qdrant
+
+Execucao em uma chamada:
+
+```bash
+python src/transform.py --source minio --load-gold --output data/chunks_postgres.jsonl
+```
+
+Ou em etapas separadas:
+
+```bash
+python src/postgres_loader.py --input data/chunks.jsonl --output data/chunks_postgres.jsonl
+python src/embedding.py --input data/chunks_postgres.jsonl --output data/chunks_embeddings.jsonl
+python src/qdrant_loader.py --input data/chunks_embeddings.jsonl
+```
+
+O PostgreSQL cria a tabela `chunks`. O Qdrant cria a colecao `usp_news_embeddings`.
+
+O vinculo entre texto e vetor e garantido assim:
+
+- `chunks.id` no PostgreSQL identifica o texto original.
+- O mesmo valor e usado como `point_id` no Qdrant.
+- O payload do Qdrant tambem guarda `postgres_id`, `documento_id` e `chunk_id`.
+
+## Variaveis de ambiente
+
+Principais valores em `.env.example`:
+
+```env
 MINIO_ENDPOINT=localhost:9000
 MINIO_ACCESS_KEY=minioadmin
 MINIO_SECRET_KEY=minioadmin123
 MINIO_BUCKET=bronze
 MINIO_SECURE=false
+
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+POSTGRES_DB=usp_data_lake
+POSTGRES_USER=usp
+POSTGRES_PASSWORD=usp123
+
+QDRANT_URL=http://localhost:6333
+QDRANT_COLLECTION=usp_news_embeddings
+
+EMBEDDING_MODEL=BAAI/bge-m3
 ```
 
-## Parar o MinIO
+## Parar serviços
 
 ```bash
-cd docker
 docker compose down
 ```
