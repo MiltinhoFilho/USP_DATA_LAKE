@@ -1,0 +1,19 @@
+{
+  "name": "usp-data-lake-devcontainer",
+  "image": "mcr.microsoft.com/devcontainers/python:0-3.11",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [9000, 5432, 6333],
+  "postCreateCommand": "pip install -r requirements.txt || true",
+  "remoteUser": "vscode",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-vscode-remote.remote-containers"
+      ]
+    }
+  }
+}

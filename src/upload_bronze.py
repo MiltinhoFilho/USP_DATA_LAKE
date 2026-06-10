@@ -1,4 +1,4 @@
-"""Upload Bronze layer JSON and PDF files to MinIO."""
+"""Upload Bronze layer JSON files to MinIO."""
 
 import argparse
 from pathlib import Path
@@ -6,7 +6,7 @@ from urllib3.exceptions import MaxRetryError
 
 from minio_client import ensure_bucket, get_minio_client, upload_file
 
-BRONZE_RAW_DIR = Path(__file__).resolve().parent.parent / "bronze" / "raw"
+BRONZE_RAW_DIR = Path(__file__).resolve().parent.parent / "bronze" / "raw"quero
 
 
 def upload_bronze_files(bronze_dir: Path = BRONZE_RAW_DIR) -> tuple[int, int]:
@@ -19,7 +19,6 @@ def upload_bronze_files(bronze_dir: Path = BRONZE_RAW_DIR) -> tuple[int, int]:
         )
 
     try:
-        client = get_minio_client()
         bucket_name = ensure_bucket(client)
     except MaxRetryError as error:
         raise ConnectionError(
