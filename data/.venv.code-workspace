@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "../.venv"
+		},
+		{
+			"path": "../bronze"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../docker"
+		},
+		{
+			"path": "../notebooks"
+		},
+		{
+			"path": "../src"
+		}
+	]
+}

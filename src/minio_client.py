@@ -1,5 +1,6 @@
 """MinIO client helpers for Bronze layer uploads."""
 
+import mimetypes
 import os
 from pathlib import Path
 
@@ -50,11 +51,13 @@ def upload_file(
     bucket_name = bucket_name or ensure_bucket(client)
 
     try:
+        content_type, _ = mimetypes.guess_type(str(local_path))
+        content_type = content_type or "application/octet-stream"
         client.fput_object(
             bucket_name,
             object_name,
             str(local_path),
-            content_type="application/json",
+            content_type=content_type,
         )
     except S3Error as error:
         raise RuntimeError(f"Falha ao enviar {local_path} para {bucket_name}/{object_name}: {error}") from error

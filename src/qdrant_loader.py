@@ -1,3 +1,4 @@
+
 """Load embeddings into Qdrant Gold vector storage."""
 
 from __future__ import annotations

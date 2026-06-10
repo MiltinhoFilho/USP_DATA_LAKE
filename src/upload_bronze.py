@@ -1,4 +1,4 @@
-"""Upload Bronze layer JSON files to MinIO."""
+"""Upload Bronze layer JSON and PDF files to MinIO."""
 
 import argparse
 from pathlib import Path
@@ -10,12 +10,12 @@ BRONZE_RAW_DIR = Path(__file__).resolve().parent.parent / "bronze" / "raw"
 
 
 def upload_bronze_files(bronze_dir: Path = BRONZE_RAW_DIR) -> tuple[int, int]:
-    json_files = sorted(bronze_dir.glob("usp_news_*.json"))
+    bronze_files = sorted(bronze_dir.glob("*.json")) + sorted(bronze_dir.glob("*.pdf"))
 
-    if not json_files:
+    if not bronze_files:
         raise FileNotFoundError(
-            f"Nenhum arquivo JSON encontrado em {bronze_dir}. "
-            "Execute primeiro: python src/scraper.py"
+            f"Nenhum arquivo Bronze (.json ou .pdf) encontrado em {bronze_dir}. "
+            "Adicione arquivos PDF ou JSON e tente novamente."
         )
 
     try:
@@ -30,9 +30,9 @@ def upload_bronze_files(bronze_dir: Path = BRONZE_RAW_DIR) -> tuple[int, int]:
     uploaded = 0
     failed = 0
 
-    print(f"Enviando {len(json_files)} arquivos para bucket '{bucket_name}'...")
+    print(f"Enviando {len(bronze_files)} arquivos para bucket '{bucket_name}'...")
 
-    for file_path in json_files:
+    for file_path in bronze_files:
         object_name = f"raw/{file_path.name}"
         try:
             upload_file(file_path, object_name, client=client, bucket_name=bucket_name)
@@ -55,7 +55,7 @@ def parse_args() -> argparse.Namespace:
         "--bronze-dir",
         type=Path,
         default=BRONZE_RAW_DIR,
-        help="Diretório com arquivos JSON da camada Bronze",
+        help="Diretório com arquivos Bronze (.json ou .pdf)",
     )
     return parser.parse_args()
 

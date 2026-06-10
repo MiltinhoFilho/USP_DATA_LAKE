@@ -9,11 +9,11 @@ Jornal USP
     ↓
 Web Scraping
     ↓
-JSON bruto
+JSON ou PDF bruto
     ↓
 MinIO (Bronze)
     ↓
-Limpeza HTML -> Markdown
+Limpeza HTML / extração de PDF
     ↓
 Chunks (1200 caracteres / 200 overlap)
     ↓
@@ -21,6 +21,12 @@ Embeddings BGE-M3
     ↓
 PostgreSQL (texto) + Qdrant (vetores)
 ```
+
+O pipeline agora aceita arquivos PDF na camada Bronze e processa seu conteúdo em texto para chunking.
+
+## Docker e containerização
+
+O serviço `app` foi adicionado ao `docker/docker-compose.yml` para executar o pipeline dentro de um container Python, junto com MinIO, PostgreSQL e Qdrant.
 
 ## Estrutura
 
@@ -39,7 +45,6 @@ usp-data-lake/
 │   └── qdrant_loader.py     # armazenamento vetorial Gold
 ├── docker/
 │   └── docker-compose.yml
-├── docker-compose.yml       # MinIO + PostgreSQL + Qdrant
 ├── requirements.txt
 └── .env.example
 ```
@@ -56,7 +61,13 @@ cp .env.example .env
 ## Subir infraestrutura
 
 ```bash
-docker compose up -d
+docker compose -f docker/docker-compose.yml up -d --build
+```
+
+Para executar o pipeline dentro do container de aplicação:
+
+```bash
+docker compose -f docker/docker-compose.yml run --rm app python src/transform.py --source local --no-output
 ```
 
 - MinIO API: `http://localhost:9000`

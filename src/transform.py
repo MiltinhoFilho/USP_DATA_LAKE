@@ -1,9 +1,10 @@
-"""Read Bronze JSON from MinIO, clean HTML, and create text chunks."""
+"""Read Bronze JSON or PDF from MinIO/local, clean text, and create text chunks."""
 
 from __future__ import annotations
 
 import argparse
 import html
+import io
 import json
 import re
 from dataclasses import dataclass
@@ -12,6 +13,7 @@ from typing import Iterable, Iterator
 
 from bs4 import BeautifulSoup, Comment
 from markdownify import markdownify as html_to_markdown
+from PyPDF2 import PdfReader
 
 from chunking import DEFAULT_CHUNK_SIZE, DEFAULT_OVERLAP, criar_chunks
 from minio_client import get_bucket_name, get_minio_client
@@ -87,6 +89,35 @@ def _decode_json_object(raw_bytes: bytes, object_name: str) -> list[BronzeDocume
     return []
 
 
+def _extract_text_from_pdf_bytes(raw_bytes: bytes, object_name: str) -> str:
+    try:
+        reader = PdfReader(io.BytesIO(raw_bytes))
+        pages = [page.extract_text() or "" for page in reader.pages]
+        return "\n\n".join(pages).strip()
+    except Exception as error:
+        raise RuntimeError(
+            f"Falha ao extrair texto do PDF {object_name}: {error}"
+        ) from error
+
+
+def _decode_pdf_bytes(raw_bytes: bytes, object_name: str) -> list[BronzeDocument]:
+    text = _extract_text_from_pdf_bytes(raw_bytes, object_name)
+    return [
+        BronzeDocument(
+            object_name=object_name,
+            documento_id=_document_id_from_object(object_name),
+            payload={
+                "titulo": Path(object_name).stem.replace("_", " ").title(),
+                "conteudo": text,
+                "autor": "",
+                "data": "",
+                "categoria": "",
+                "url": "",
+            },
+        )
+    ]
+
+
 def iter_minio_documents(
     prefix: str = "raw/",
     limit: int | None = None,
@@ -104,12 +135,17 @@ def iter_minio_documents(
     for obj in objects:
         if limit is not None and yielded >= limit:
             break
-        if not obj.object_name.endswith(".json"):
+        suffix = obj.object_name.lower().split(".")[-1]
+        if suffix not in {"json", "pdf"}:
             continue
 
         response = client.get_object(bucket_name, obj.object_name)
         try:
-            documents = _decode_json_object(response.read(), obj.object_name)
+            raw_bytes = response.read()
+            if suffix == "json":
+                documents = _decode_json_object(raw_bytes, obj.object_name)
+            else:
+                documents = _decode_pdf_bytes(raw_bytes, obj.object_name)
         finally:
             response.close()
             response.release_conn()
@@ -127,10 +163,17 @@ def iter_local_documents(
 ) -> Iterator[BronzeDocument]:
     """Yield local Bronze JSON files for development and validation."""
     yielded = 0
-    for file_path in sorted(bronze_dir.glob("*.json")):
+    for file_path in sorted(bronze_dir.glob("*")):
+        if file_path.suffix.lower() not in {".json", ".pdf"}:
+            continue
         if limit is not None and yielded >= limit:
             break
-        documents = _decode_json_object(file_path.read_bytes(), file_path.name)
+
+        raw_bytes = file_path.read_bytes()
+        if file_path.suffix.lower() == ".json":
+            documents = _decode_json_object(raw_bytes, file_path.name)
+        else:
+            documents = _decode_pdf_bytes(raw_bytes, file_path.name)
         for document in documents:
             if limit is not None and yielded >= limit:
                 break
