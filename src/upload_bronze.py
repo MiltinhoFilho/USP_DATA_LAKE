@@ -1,12 +1,13 @@
-"""Upload Bronze layer JSON files to MinIO."""
+"""Upload Bronze layer JSON/PDF files to MinIO."""
 
 import argparse
 from pathlib import Path
+
 from urllib3.exceptions import MaxRetryError
 
 from minio_client import ensure_bucket, get_minio_client, upload_file
 
-BRONZE_RAW_DIR = Path(__file__).resolve().parent.parent / "bronze" / "raw"quero
+BRONZE_RAW_DIR = Path(__file__).resolve().parent.parent / "bronze" / "raw"
 
 
 def upload_bronze_files(bronze_dir: Path = BRONZE_RAW_DIR) -> tuple[int, int]:
@@ -19,11 +20,12 @@ def upload_bronze_files(bronze_dir: Path = BRONZE_RAW_DIR) -> tuple[int, int]:
         )
 
     try:
+        client = get_minio_client()
         bucket_name = ensure_bucket(client)
     except MaxRetryError as error:
         raise ConnectionError(
-            "Não foi possível conectar ao MinIO em localhost:9000. "
-            "Suba o serviço com: cd docker && docker compose up -d"
+            "Nao foi possivel conectar ao MinIO em localhost:9000. "
+            "Suba o servico com: docker compose -f docker/docker-compose.yml up -d"
         ) from error
 
     uploaded = 0
@@ -42,7 +44,7 @@ def upload_bronze_files(bronze_dir: Path = BRONZE_RAW_DIR) -> tuple[int, int]:
             failed += 1
 
     print(f"\nResumo: {uploaded} enviados, {failed} falhas.")
-    print(f"Console MinIO: http://localhost:9001")
+    print("Console MinIO: http://localhost:9001")
     print(f"Bucket: {bucket_name} | Prefixo: raw/")
 
     return uploaded, failed
@@ -54,7 +56,7 @@ def parse_args() -> argparse.Namespace:
         "--bronze-dir",
         type=Path,
         default=BRONZE_RAW_DIR,
-        help="Diretório com arquivos Bronze (.json ou .pdf)",
+        help="Diretorio com arquivos Bronze (.json ou .pdf)",
     )
     return parser.parse_args()
 
@@ -66,7 +68,7 @@ def main() -> None:
     if failed:
         raise SystemExit(1)
 
-    print(f"Upload concluído: {uploaded} arquivos na camada Bronze.")
+    print(f"Upload concluido: {uploaded} arquivos na camada Bronze.")
 
 
 if __name__ == "__main__":

@@ -13,7 +13,6 @@ from typing import Iterable, Iterator
 
 from bs4 import BeautifulSoup, Comment
 from markdownify import markdownify as html_to_markdown
-from PyPDF2 import PdfReader
 
 from chunking import DEFAULT_CHUNK_SIZE, DEFAULT_OVERLAP, criar_chunks
 from minio_client import get_bucket_name, get_minio_client
@@ -91,6 +90,8 @@ def _decode_json_object(raw_bytes: bytes, object_name: str) -> list[BronzeDocume
 
 def _extract_text_from_pdf_bytes(raw_bytes: bytes, object_name: str) -> str:
     try:
+        from PyPDF2 import PdfReader
+
         reader = PdfReader(io.BytesIO(raw_bytes))
         pages = [page.extract_text() or "" for page in reader.pages]
         return "\n\n".join(pages).strip()
@@ -123,7 +124,7 @@ def iter_minio_documents(
     limit: int | None = None,
     bucket_name: str | None = None,
 ) -> Iterator[BronzeDocument]:
-    """Yield Bronze JSON documents stored in MinIO."""
+    """Yield Bronze JSON/PDF documents stored in MinIO."""
     client = get_minio_client()
     bucket_name = bucket_name or get_bucket_name()
 
@@ -219,7 +220,7 @@ def limpar_html_para_markdown(html_text: str) -> str:
     if not html_text:
         return ""
 
-    soup = BeautifulSoup(html_text, "lxml")
+    soup = BeautifulSoup(html_text, "html.parser")
     for comment in soup.find_all(string=lambda text: isinstance(text, Comment)):
         comment.extract()
     for selector in NOISE_SELECTORS:
