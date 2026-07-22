@@ -5,9 +5,38 @@ from pathlib import Path
 
 from urllib3.exceptions import MaxRetryError
 
-from minio_client import ensure_bucket, get_minio_client, upload_file
+from src.minio_client import (
+    ensure_bucket,
+    get_json_prefix,
+    get_minio_client,
+    get_pdf_prefix,
+    upload_file,
+)
 
 BRONZE_RAW_DIR = Path(__file__).resolve().parent.parent / "bronze" / "raw"
+
+
+def upload_bronze_file(file_path: Path) -> dict:
+    """Envia um único objeto Bronze ao prefixo correspondente ao seu formato."""
+    if not file_path.is_file() or file_path.stat().st_size <= 0:
+        raise ValueError(f"Arquivo Bronze vazio ou inexistente: {file_path}")
+
+    suffix = file_path.suffix.lower()
+    if suffix not in {".json", ".pdf"}:
+        raise ValueError("Apenas arquivos JSON ou PDF podem ser enviados à Bronze")
+
+    client = get_minio_client()
+    bucket_name = ensure_bucket(client)
+    prefix = get_pdf_prefix() if suffix == ".pdf" else get_json_prefix()
+    object_name = f"{prefix}{file_path.name}"
+    upload_file(file_path, object_name, client=client, bucket_name=bucket_name)
+    stat = client.stat_object(bucket_name, object_name)
+    return {
+        "bucket": bucket_name,
+        "object_key": object_name,
+        "size_bytes": int(stat.size),
+        "content_type": stat.content_type,
+    }
 
 
 def upload_bronze_files(bronze_dir: Path = BRONZE_RAW_DIR) -> tuple[int, int]:
@@ -34,8 +63,9 @@ def upload_bronze_files(bronze_dir: Path = BRONZE_RAW_DIR) -> tuple[int, int]:
     print(f"Enviando {len(bronze_files)} arquivos para bucket '{bucket_name}'...")
 
     for file_path in bronze_files:
-        object_name = f"raw/{file_path.name}"
         try:
+            prefix = get_pdf_prefix() if file_path.suffix.lower() == ".pdf" else get_json_prefix()
+            object_name = f"{prefix}{file_path.name}"
             upload_file(file_path, object_name, client=client, bucket_name=bucket_name)
             print(f"  OK  {object_name}")
             uploaded += 1

@@ -41,11 +41,38 @@ services:
       - qdrant_data:/qdrant/storage
     restart: unless-stopped
 
-  app:
+  generator-api:
     build:
       context: ..
       dockerfile: Dockerfile
-    container_name: usp-app
+    container_name: usp-generator-api
+    depends_on:
+      - minio
+    environment:
+      MINIO_ENDPOINT: minio:9000
+      MINIO_ACCESS_KEY: minioadmin
+      MINIO_SECRET_KEY: minioadmin123
+      MINIO_BUCKET: bronze
+      MINIO_SECURE: "false"
+      PYTHONPATH: /workspace
+    ports:
+      - "8001:8000"
+    working_dir: /workspace
+    volumes:
+      - ..:/workspace:cached
+    command: ["uvicorn", "src.api.generator_api:app", "--host", "0.0.0.0", "--port", "8000"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+
+  pipeline-api:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    container_name: usp-pipeline-api
     depends_on:
       - minio
       - postgres
@@ -61,10 +88,56 @@ services:
       POSTGRES_USER: usp
       POSTGRES_PASSWORD: usp123
       QDRANT_URL: http://qdrant:6333
+      QDRANT_COLLECTION: usp_news_embeddings
+      EMBEDDING_MODEL: BAAI/bge-m3
+      PYTHONPATH: /workspace
+    ports:
+      - "8002:8000"
     working_dir: /workspace
     volumes:
       - ..:/workspace:cached
-    command: ["sleep", "infinity"]
+    command: ["uvicorn", "src.api.pipeline_api:app", "--host", "0.0.0.0", "--port", "8000"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+
+  rag-api:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    container_name: usp-rag-api
+    depends_on:
+      - postgres
+      - qdrant
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_DB: usp_data_lake
+      POSTGRES_USER: usp
+      POSTGRES_PASSWORD: usp123
+      QDRANT_URL: http://qdrant:6333
+      QDRANT_COLLECTION: usp_news_embeddings
+      EMBEDDING_MODEL: BAAI/bge-m3
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-gemma3:4b}
+      OLLAMA_TIMEOUT: ${OLLAMA_TIMEOUT:-300}
+      PYTHONPATH: /workspace
+    ports:
+      - "8003:8000"
+    working_dir: /workspace
+    volumes:
+      - ..:/workspace:cached
+    command: ["uvicorn", "src.api.rag_api:app", "--host", "0.0.0.0", "--port", "8000"]
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 15m
     restart: unless-stopped
 
 volumes:

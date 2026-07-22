@@ -3,10 +3,12 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 from pathlib import Path
 from typing import Iterable
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 from dotenv import load_dotenv
 
@@ -71,7 +73,7 @@ DO UPDATE SET
     url = EXCLUDED.url,
     source_object = EXCLUDED.source_object,
     updated_at = NOW()
-RETURNING id;
+RETURNING id, (created_at = updated_at) AS inserted;
 """
 
 
@@ -121,6 +123,69 @@ def _chunk_params(record: dict) -> dict:
     }
 
 
+def normalize_document_url(url: str) -> str:
+    """Normaliza uma URL já conhecida, sem acessar ou descobrir endereços."""
+    parts = urlsplit(str(url or "").strip())
+    query = urlencode([
+        (key, value)
+        for key, value in parse_qsl(parts.query, keep_blank_values=True)
+        if not key.lower().startswith("utm_")
+    ])
+    return urlunsplit(
+        (parts.scheme.lower(), parts.netloc.lower(), parts.path or "/", query, "")
+    )
+
+
+def resolve_document_id_collisions(
+    records: Iterable[dict], connection=None
+) -> tuple[list[dict], list[dict]]:
+    """Impede que um nome sequencial reutilizado sobrescreva outra notícia."""
+    records = [dict(record) for record in records]
+    if not records:
+        return records, []
+
+    own_connection = connection is None
+    connection = connection or get_postgres_connection()
+    document_ids = sorted({str(record["documento_id"]) for record in records})
+    existing: dict[str, set[str]] = {}
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute(
+                "SELECT documento_id, url FROM chunks WHERE documento_id = ANY(%s)",
+                (document_ids,),
+            )
+            for document_id, url in cursor.fetchall():
+                existing.setdefault(str(document_id), set()).add(
+                    normalize_document_url(str(url or ""))
+                )
+    finally:
+        if own_connection:
+            connection.close()
+
+    seen: set[tuple[str, str]] = set()
+    collisions: list[dict] = []
+    for record in records:
+        original_id = str(record["documento_id"])
+        normalized_url = normalize_document_url(str(record.get("url") or ""))
+        known_urls = existing.get(original_id, set())
+        if known_urls and normalized_url not in known_urls:
+            identity = normalized_url or str(record.get("source_object") or original_id)
+            resolved_id = (
+                f"site_{hashlib.sha256(identity.encode('utf-8')).hexdigest()[:16]}"
+            )
+            record["documento_id"] = resolved_id
+            key = (original_id, resolved_id)
+            if key not in seen:
+                seen.add(key)
+                collisions.append({
+                    "original_documento_id": original_id,
+                    "resolved_documento_id": resolved_id,
+                    "url": normalized_url,
+                })
+
+    return records, collisions
+
+
 def insert_chunks(records: Iterable[dict], connection=None) -> list[dict]:
     """Insert/update chunks and return records enriched with PostgreSQL ids."""
     own_connection = connection is None
@@ -140,6 +205,7 @@ def insert_chunks(records: Iterable[dict], connection=None) -> list[dict]:
                 enriched = dict(record)
                 enriched["id"] = postgres_id
                 enriched["postgres_id"] = postgres_id
+                enriched["_inserted"] = bool(row[1])
                 enriched_records.append(enriched)
 
         if own_connection:

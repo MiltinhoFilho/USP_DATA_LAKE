@@ -8,3 +8,12 @@ env/
 venv/
 .pytest_cache
 .git
+.env
+.env.*
+!.env.example
+.cache/
+models/
+data/
+bronze/
+*.log
+.tmp_*.py

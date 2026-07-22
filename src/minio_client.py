@@ -30,6 +30,21 @@ def get_bucket_name() -> str:
     return os.getenv("MINIO_BUCKET", "bronze")
 
 
+def _normalized_prefix(value: str) -> str:
+    normalized = value.strip().strip("/")
+    return f"{normalized}/" if normalized else ""
+
+
+def get_json_prefix() -> str:
+    """Prefixo dos JSONs Bronze, preservando o layout legado em ``raw/``."""
+    return _normalized_prefix(os.getenv("MINIO_JSON_PREFIX", "raw"))
+
+
+def get_pdf_prefix() -> str:
+    """Prefixo único usado pelo Generator e pelo Pipeline para PDFs Bronze."""
+    return _normalized_prefix(os.getenv("MINIO_PDF_PREFIX", "raw/pdf"))
+
+
 def ensure_bucket(client: Minio | None = None, bucket_name: str | None = None) -> str:
     client = client or get_minio_client()
     bucket_name = bucket_name or get_bucket_name()

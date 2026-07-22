@@ -14,12 +14,14 @@ from typing import Iterable, Iterator
 from bs4 import BeautifulSoup, Comment
 from markdownify import markdownify as html_to_markdown
 
-from chunking import DEFAULT_CHUNK_SIZE, DEFAULT_OVERLAP, criar_chunks
-from minio_client import get_bucket_name, get_minio_client
+from src.chunking import DEFAULT_CHUNK_SIZE, DEFAULT_OVERLAP, criar_chunks
+from src.minio_client import get_bucket_name, get_minio_client
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_LOCAL_BRONZE_DIR = PROJECT_ROOT / "bronze" / "raw"
 DEFAULT_CHUNKS_OUTPUT = PROJECT_ROOT / "data" / "chunks.jsonl"
+
+MOJIBAKE_MARKERS = ("Ã", "Â", "â€", "â€“", "â€”", "â€˜", "â€™", "â€œ", "â€�")
 
 NOISE_SELECTORS = (
     "script",
@@ -89,12 +91,19 @@ def _decode_json_object(raw_bytes: bytes, object_name: str) -> list[BronzeDocume
 
 
 def _extract_text_from_pdf_bytes(raw_bytes: bytes, object_name: str) -> str:
+    if not raw_bytes:
+        raise RuntimeError(f"PDF vazio: {object_name}")
+    if not raw_bytes.startswith(b"%PDF-"):
+        raise RuntimeError(f"Conteudo sem assinatura PDF: {object_name}")
     try:
         from PyPDF2 import PdfReader
 
         reader = PdfReader(io.BytesIO(raw_bytes))
         pages = [page.extract_text() or "" for page in reader.pages]
-        return "\n\n".join(pages).strip()
+        text = "\n\n".join(pages).strip()
+        if not text:
+            raise RuntimeError(f"PDF sem texto extraível: {object_name}")
+        return text
     except Exception as error:
         raise RuntimeError(
             f"Falha ao extrair texto do PDF {object_name}: {error}"
@@ -103,17 +112,23 @@ def _extract_text_from_pdf_bytes(raw_bytes: bytes, object_name: str) -> str:
 
 def _decode_pdf_bytes(raw_bytes: bytes, object_name: str) -> list[BronzeDocument]:
     text = _extract_text_from_pdf_bytes(raw_bytes, object_name)
+    from PyPDF2 import PdfReader
+
+    metadata = PdfReader(io.BytesIO(raw_bytes)).metadata or {}
+    title = str(metadata.get("/Title") or Path(object_name).stem.replace("_", " ").title())
+    subject = str(metadata.get("/Subject") or "")
+    source_url = subject.removeprefix("Source-URL: ").strip() if subject.startswith("Source-URL: ") else ""
     return [
         BronzeDocument(
             object_name=object_name,
-            documento_id=_document_id_from_object(object_name),
+            documento_id=f"pdf_{_document_id_from_object(object_name)}",
             payload={
-                "titulo": Path(object_name).stem.replace("_", " ").title(),
+                "titulo": title,
                 "conteudo": text,
                 "autor": "",
                 "data": "",
                 "categoria": "",
-                "url": "",
+                "url": source_url,
             },
         )
     ]
@@ -123,10 +138,12 @@ def iter_minio_documents(
     prefix: str = "raw/",
     limit: int | None = None,
     bucket_name: str | None = None,
+    extensions: set[str] | None = None,
 ) -> Iterator[BronzeDocument]:
     """Yield Bronze JSON/PDF documents stored in MinIO."""
     client = get_minio_client()
     bucket_name = bucket_name or get_bucket_name()
+    extensions = extensions or {"json", "pdf"}
 
     if not client.bucket_exists(bucket_name):
         raise RuntimeError(f"Bucket MinIO '{bucket_name}' nao encontrado")
@@ -137,7 +154,7 @@ def iter_minio_documents(
         if limit is not None and yielded >= limit:
             break
         suffix = obj.object_name.lower().split(".")[-1]
-        if suffix not in {"json", "pdf"}:
+        if suffix not in extensions:
             continue
 
         response = client.get_object(bucket_name, obj.object_name)
@@ -161,11 +178,14 @@ def iter_minio_documents(
 def iter_local_documents(
     bronze_dir: Path = DEFAULT_LOCAL_BRONZE_DIR,
     limit: int | None = None,
+    extensions: set[str] | None = None,
 ) -> Iterator[BronzeDocument]:
     """Yield local Bronze JSON files for development and validation."""
+    extensions = extensions or {"json", "pdf"}
     yielded = 0
     for file_path in sorted(bronze_dir.glob("*")):
-        if file_path.suffix.lower() not in {".json", ".pdf"}:
+        suffix = file_path.suffix.lower().lstrip(".")
+        if suffix not in extensions:
             continue
         if limit is not None and yielded >= limit:
             break
@@ -187,8 +207,34 @@ def _is_noise_line(line: str) -> bool:
     return any(re.match(pattern, lowered) for pattern in NOISE_LINE_PATTERNS)
 
 
+def _mojibake_score(text: str) -> int:
+    return sum(text.count(marker) for marker in MOJIBAKE_MARKERS)
+
+
+def _repair_mojibake(text: str) -> str:
+    """Fix common UTF-8 text that was decoded as Latin-1/Windows-1252."""
+    if not text or not any(marker in text for marker in MOJIBAKE_MARKERS):
+        return text
+
+    best_text = text
+    best_score = _mojibake_score(text)
+    for encoding in ("latin1", "cp1252"):
+        try:
+            candidate = text.encode(encoding).decode("utf-8")
+        except UnicodeError:
+            continue
+
+        candidate_score = _mojibake_score(candidate)
+        if candidate_score < best_score:
+            best_text = candidate
+            best_score = candidate_score
+
+    return best_text
+
+
 def _normalize_markdown(text: str) -> str:
     text = html.unescape(text)
+    text = _repair_mojibake(text)
     text = text.replace("\r\n", "\n").replace("\r", "\n").replace("\xa0", " ")
     text = re.sub(r"!\[[^\]]*]\([^)]*\)", "", text)
     text = re.sub(r"\[([^\]]+)]\(\s*(?:#|javascript:[^)]+)\)", r"\1", text, flags=re.I)
@@ -212,7 +258,7 @@ def _normalize_markdown(text: str) -> str:
         lines.append(cleaned)
 
     cleaned_text = "\n".join(lines).strip()
-    return re.sub(r"\n{3,}", "\n\n", cleaned_text)
+    return _repair_mojibake(re.sub(r"\n{3,}", "\n\n", cleaned_text))
 
 
 def limpar_html_para_markdown(html_text: str) -> str:
@@ -291,11 +337,21 @@ def iter_bronze_documents(
     local_bronze_dir: Path,
     limit: int | None,
     bucket_name: str | None = None,
+    extensions: set[str] | None = None,
 ) -> Iterable[BronzeDocument]:
     if source == "minio":
-        return iter_minio_documents(prefix=prefix, limit=limit, bucket_name=bucket_name)
+        return iter_minio_documents(
+            prefix=prefix,
+            limit=limit,
+            bucket_name=bucket_name,
+            extensions=extensions,
+        )
     if source == "local":
-        return iter_local_documents(bronze_dir=local_bronze_dir, limit=limit)
+        return iter_local_documents(
+            bronze_dir=local_bronze_dir,
+            limit=limit,
+            extensions=extensions,
+        )
     raise ValueError("source deve ser 'minio' ou 'local'")
 
 
@@ -307,6 +363,7 @@ def run_transform(
     chunk_size: int = DEFAULT_CHUNK_SIZE,
     overlap: int = DEFAULT_OVERLAP,
     bucket_name: str | None = None,
+    extensions: set[str] | None = None,
 ) -> list[dict]:
     records: list[dict] = []
     documents = iter_bronze_documents(
@@ -315,6 +372,7 @@ def run_transform(
         local_bronze_dir=local_bronze_dir,
         limit=limit,
         bucket_name=bucket_name,
+        extensions=extensions,
     )
 
     document_count = 0

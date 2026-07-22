@@ -35,7 +35,14 @@ class BGEM3Embedder:
 
         self.model_name = model_name or get_embedding_model_name()
         self.normalize_embeddings = normalize_embeddings
-        self.model = SentenceTransformer(self.model_name, device=device)
+        offline = os.getenv("HF_HUB_OFFLINE", "").strip().lower() in {
+            "1", "true", "yes", "on"
+        }
+        self.model = SentenceTransformer(
+            self.model_name,
+            device=device,
+            local_files_only=offline,
+        )
 
     @property
     def dimension(self) -> int:
