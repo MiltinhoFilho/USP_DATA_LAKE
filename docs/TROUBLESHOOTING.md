@@ -17,10 +17,9 @@ do container por `http://host.docker.internal:11434`. A primeira chamada pode
 incluir o carregamento do modelo. Use `keep_alive`, evite gerações concorrentes e
 faça um warm-up curto antes de uma demonstração.
 
-No ambiente local validado, uma chamada direta fria levou 41,81 s e a seguinte
-4,11 s. Em diferentes execuções E2E, perguntas positivas levaram aproximadamente
-34,52–121,05 s somente na geração. Esses números são observações, não garantias
-para outros hardwares.
+O arquivo `data/rag_demo_report.json` preserva as durações da validação local
+disponível. Esses valores dependem de hardware, carga, cold start e estado do
+modelo e não constituem garantia para outros ambientes.
 
 ## A API retorna 503 em `/pergunta`
 
@@ -29,8 +28,11 @@ para outros hardwares.
 - Confirme que o cache BGE-M3 está legível no container.
 - Verifique se o Ollama está ativo e se o modelo configurado está instalado.
 
-Import, OpenAPI, `/` e `/health` não comprovam a disponibilidade desses recursos,
-pois deliberadamente não os inicializam nem consultam.
+Importação e OpenAPI não inicializam o Retriever. `/` e `/health` apenas retornam
+informações da API e não consultam as dependências. Contudo, o lifespan da RAG
+inicializa o Retriever no startup, carregando BGE-M3, índice BM25 e cliente
+Qdrant. Assim, `/health` não comprova a saúde individual dessas dependências,
+mesmo depois de um startup concluído.
 
 ## Uma pergunta é recusada
 
@@ -51,5 +53,12 @@ No Windows PowerShell:
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-A validação atual possui 55 testes. Avisos de depreciação do TestClient/httpx e
+A suíte atual possui 64 testes automatizados. Avisos de depreciação do TestClient/httpx e
 do PyPDF2 não representam falha, mas devem ser acompanhados em manutenção futura.
+
+## A carga Qdrant falha sem PostgreSQL
+
+Embora o contrato aceite `load_postgres=false` com `load_qdrant=true`, os vetores
+precisam de `postgres_id` ou `id`. Execute a carga Gold com `load_postgres=true`
+quando `load_qdrant=true`, garantindo a criação da identidade antes do upsert no
+Qdrant.

@@ -13,10 +13,14 @@
 1. Explicar o recorte de 100 JSONs + 1 PDF, que reproduz 532 chunks, e o Gold de
    663 registros preservando os 619 históricos.
 2. Abrir Generator Swagger em `http://localhost:8001/docs` e executar `/health`.
-3. Explicar `/site` e `/pdf` sem repetir scraping desnecessário.
-4. Abrir MinIO em `http://localhost:9001` e mostrar `bronze/raw/`.
+3. Explicar que `/site` e `/pdf` sempre gravam na Bronze local e somente enviam
+   ao MinIO quando `upload_minio=true`, sem repetir scraping desnecessário.
+4. Abrir MinIO em `http://localhost:9001` e mostrar `bronze/raw/` quando o upload
+   opcional tiver sido executado.
 5. Abrir Pipeline Swagger em `http://localhost:8002/docs` e executar `/health`.
 6. Explicar `/processar-site`: Bronze → Silver → PostgreSQL/Qdrant Gold.
+   Para a carga vetorial, manter `load_postgres=true`, pois o Qdrant depende do
+   `postgres_id` gerado pelo PostgreSQL.
 7. Mostrar PostgreSQL com 663 chunks e Qdrant com 663 vetores, IDs sincronizados.
 8. Abrir RAG Swagger em `http://localhost:8003/docs`.
 9. Executar uma pergunta previamente validada do recorte com `top_k=5`; pré-aquecer
@@ -24,6 +28,10 @@
 10. Mostrar resposta, URLs, textos e scores das fontes.
 11. Explicar busca híbrida, evidence check e recusa segura.
 12. Encerrar reforçando que o recorte não cobre todo o Jornal da USP.
+
+O `/health` da RAG retorna apenas o status da API. A inicialização efetiva do
+Retriever ocorre antes, no startup, quando o lifespan carrega BGE-M3, índice BM25
+e cliente Qdrant; por isso, aguarde a conclusão do startup antes da demonstração.
 
 ## Encerramento seguro
 
@@ -59,8 +67,8 @@ $body = @{ pergunta = 'Quais são os quatro módulos do curso de organização f
 Invoke-RestMethod -Method Post http://localhost:8003/pergunta -ContentType 'application/json' -Body $body
 ```
 
-No hardware validado, respostas positivas variaram de aproximadamente 45 a 150
-segundos conforme pressão de CPU/memória. Aguarde cada chamada terminar e nunca
+No relatório local disponível, respostas positivas variaram de aproximadamente
+55 a 151 segundos conforme pressão de CPU/memória. Aguarde cada chamada terminar e nunca
 execute gerações concorrentes durante a apresentação.
 
 ## Resultados E2E observados
@@ -69,11 +77,11 @@ Com os serviços aquecidos e `top_k=5`, a validação real mais recente registro
 
 | Cenário | Evidence Check | Ollama | Tempo total |
 |---|---|---|---:|
-| Cultura de inovação — JSON | aceito | executado | 144,17 s |
-| Quatro módulos do curso — PDF | aceito | executado | 47,69 s |
-| Missões da USP em Marte — externa | recusado | ignorado | 19,20 s |
+| Cultura de inovação — JSON | aceito | executado | 151,093 s |
+| Quatro módulos do curso — PDF | aceito | executado | 54,952 s |
+| Missões da USP em Marte — externa | recusado | ignorado | 0,867 s |
 
-As duas respostas positivas retornaram título, URL e score. A resposta PDF foi
+Os valores acima provêm de `data/rag_demo_report.json`. As duas respostas positivas retornaram título, URL e score. A resposta PDF foi
 baseada no trecho que enumera literalmente os quatro módulos. Os tempos refletem
 somente o ambiente local observado e podem variar de acordo com CPU, memória,
 aceleração e estado frio ou aquecido dos modelos.

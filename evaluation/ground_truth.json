@@ -1,0 +1,160 @@
+{
+  "benchmark_version": "0.1.0",
+  "review_status": "pending",
+  "review_instructions": "Cada item deve ser conferido por uma pessoa contra o trecho indexado antes de mudar review_status para approved.",
+  "answer_quality_scale": {
+    "criteria": ["fidelidade", "cobertura", "ausencia_de_informacao_nao_sustentada", "fonte_correta", "clareza"],
+    "scores": {"0": "incorreta ou sem sustentação", "1": "parcialmente correta", "2": "correta e sustentada"},
+    "rule": "A avaliação deve ser realizada por uma pessoa após a execução; o modelo avaliado não pode ser o único juiz."
+  },
+  "cases": [
+    {
+      "id": "json-001", "categoria": "json", "pergunta": "O que caracteriza uma cultura de inovação segundo a notícia?", "answerable": true,
+      "source_type_esperado": "json", "document_id_esperado": "site_49a6fa435ccb36a9", "titulo_esperado": "A verdadeira face da cultura de inovação",
+      "url_esperada": "https://jornal.usp.br/articulistas/marcelo-caldeira-pedroso/a-verdadeira-face-da-cultura-de-inovacao/", "source_object_esperado": "raw/usp_news_000001.json",
+      "trecho_referencia": "Isso implica em estimular a geração contínua de novas ideias, tomar decisões sob incerteza e assumir os riscos de desenvolver novas tecnologias e de implantar novos produtos, serviços e processos.",
+      "resposta_referencia": "Uma cultura de inovação estimula novas ideias, decisões sob incerteza e a assunção de riscos para desenvolver tecnologias, produtos, serviços e processos, considerando resultados de médio e longo prazo.",
+      "evidence_sufficient_esperado": true, "ollama_skipped_esperado": false, "observacao_origem": "Chunk 1 do JSON indexado.", "review_status": "pending", "human_evaluation": null
+    },
+    {
+      "id": "json-002", "categoria": "json", "pergunta": "Quais efeitos a ampliação do Bolsa Família teve sobre hospitalizações, mortalidade e empregabilidade?", "answerable": true,
+      "source_type_esperado": "json", "document_id_esperado": "usp_news_000062", "titulo_esperado": "Bolsa Família reduziu hospitalizações e aumentou empregabilidade, aponta estudo",
+      "url_esperada": "https://jornal.usp.br/radio-usp/bolsa-familia-reduziu-hospitalizacoes-e-aumentou-empregabilidade-aponta-estudo/", "source_object_esperado": "raw/usp_news_000062.json",
+      "trecho_referencia": "diminuiu entre os beneficiários a taxa de hospitalização em 8%, a taxa de mortalidade em 14%, além de aumentar a empregabilidade em 5%.",
+      "resposta_referencia": "A ampliação reduziu a hospitalização em 8% e a mortalidade em 14%, além de elevar a empregabilidade em 5% entre os beneficiários.",
+      "evidence_sufficient_esperado": true, "ollama_skipped_esperado": false, "observacao_origem": "Chunk 1 do JSON indexado.", "review_status": "pending", "human_evaluation": null
+    },
+    {
+      "id": "json-003", "categoria": "json", "pergunta": "Como o GeoReDUS facilita o acesso aos dados urbanos do CEM?", "answerable": true,
+      "source_type_esperado": "json", "document_id_esperado": "usp_news_000041", "titulo_esperado": "CEM transforma dados urbanos em ferramenta para pesquisas e políticas públicas",
+      "url_esperada": "https://jornal.usp.br/atualidades/cem-transforma-dados-urbanos-em-ferramenta-para-pesquisas-e-politicas-publicas/", "source_object_esperado": "raw/usp_news_000041.json",
+      "trecho_referencia": "permite até que usuários sem conhecimento técnico especializado visualizem mapas, cruze informações e compreendam padrões urbanos diretamente pela internet.",
+      "resposta_referencia": "O GeoReDUS permite que pessoas sem conhecimento técnico especializado visualizem mapas, cruzem informações e compreendam padrões urbanos pela internet.",
+      "evidence_sufficient_esperado": true, "ollama_skipped_esperado": false, "observacao_origem": "Chunk 3 do JSON indexado.", "review_status": "pending", "human_evaluation": null
+    },
+    {
+      "id": "json-004", "categoria": "json", "pergunta": "Quais mecanismos do canabidiol podem auxiliar na recuperação da fadiga muscular?", "answerable": true,
+      "source_type_esperado": "json", "document_id_esperado": "usp_news_000043", "titulo_esperado": "Canabidiol ganha espaço no esporte como aliado na recuperação muscular",
+      "url_esperada": "https://jornal.usp.br/atualidades/canabidiol-ganha-espaco-no-esporte-como-aliado-na-recuperacao-muscular/", "source_object_esperado": "raw/usp_news_000043.json",
+      "trecho_referencia": "os mecanismos envolvidos incluem principalmente ações antioxidantes, anti-inflamatórias e de proteção celular",
+      "resposta_referencia": "Os mecanismos citados são ações antioxidantes, anti-inflamatórias e de proteção celular.",
+      "evidence_sufficient_esperado": true, "ollama_skipped_esperado": false, "observacao_origem": "Chunk 4 do JSON indexado; o texto ressalva que as evidências ainda são limitadas.", "review_status": "pending", "human_evaluation": null
+    },
+    {
+      "id": "json-005", "categoria": "json", "pergunta": "Qual é o objetivo do e-book A arte de comer sem glúten?", "answerable": true,
+      "source_type_esperado": "json", "document_id_esperado": "usp_news_000066", "titulo_esperado": "E-book gratuito reúne opções de lanches sem glúten e de baixo custo desenvolvidas em pesquisas",
+      "url_esperada": "https://jornal.usp.br/universidade/usp-lanca-e-book-gratuito-com-receitas-de-lanches-sem-gluten-e-de-baixo-custo/", "source_object_esperado": "raw/usp_news_000066.json",
+      "trecho_referencia": "Este e-book é voltado ao desenvolvimento de receitas sem glúten acessíveis e de baixo custo",
+      "resposta_referencia": "O e-book busca oferecer receitas sem glúten acessíveis, de baixo custo e adequadas ao cotidiano de pessoas com restrições alimentares.",
+      "evidence_sufficient_esperado": true, "ollama_skipped_esperado": false, "observacao_origem": "Chunks 1 e 2 do JSON indexado.", "review_status": "pending", "human_evaluation": null
+    },
+    {
+      "id": "json-006", "categoria": "json", "pergunta": "Por que a participação humana continua importante em processos seletivos que usam inteligência artificial?", "answerable": true,
+      "source_type_esperado": "json", "document_id_esperado": "usp_news_000002", "titulo_esperado": "Uso de IA em processos seletivos reitera a importância da participação humana",
+      "url_esperada": "https://jornal.usp.br/atualidades/uso-de-ia-em-processos-seletivos-reitera-a-importancia-da-participacao-humana/", "source_object_esperado": "raw/usp_news_000002.json",
+      "trecho_referencia": "A subjetividade capta aspectos que o algoritmo não capta, que a IA não capta.",
+      "resposta_referencia": "A participação humana é necessária porque subjetividade, potencial, motivação e causas dos comportamentos não são plenamente captados pelos algoritmos.",
+      "evidence_sufficient_esperado": true, "ollama_skipped_esperado": false, "observacao_origem": "Chunks 4 a 6 do JSON indexado.", "review_status": "pending", "human_evaluation": null
+    },
+    {
+      "id": "json-007", "categoria": "json", "pergunta": "Quais riscos da gamificação para crianças e adolescentes são destacados na notícia?", "answerable": true,
+      "source_type_esperado": "json", "document_id_esperado": "site_f2a1c9d9efd110dd", "titulo_esperado": "Quando o jogo sai da tela: os riscos da gamificação no cotidiano",
+      "url_esperada": "https://jornal.usp.br/radio-usp/quando-o-jogo-sai-da-tela-os-riscos-da-gamificacao-no-cotidiano/", "source_object_esperado": "raw/usp_news_000010.json",
+      "trecho_referencia": "especialmente em crianças e adolescentes, que podem desenvolver dificuldade em lidar com frustrações e metas de longo prazo.",
+      "resposta_referencia": "A notícia destaca dependência, ansiedade e dificuldade de crianças e adolescentes em lidar com frustrações e metas de longo prazo.",
+      "evidence_sufficient_esperado": true, "ollama_skipped_esperado": false, "observacao_origem": "Chunk 1 do JSON indexado.", "review_status": "pending", "human_evaluation": null
+    },
+    {
+      "id": "json-008", "categoria": "json", "pergunta": "Quais três fatores são apontados como fundamentais para avançar na alfabetização na idade certa?", "answerable": true,
+      "source_type_esperado": "json", "document_id_esperado": "site_76233d00b2a1d38b", "titulo_esperado": "Alfabetização na idade certa mobiliza formações na Bahia",
+      "url_esperada": "https://jornal.usp.br/campus-ribeirao-preto/alfabetizacao-na-idade-certa-mobiliza-formacoes-na-bahia/", "source_object_esperado": "raw/usp_news_000006.json",
+      "trecho_referencia": "assegurar que todas as crianças sejam alfabetizadas até os sete anos; fortalecer o regime de colaboração entre municípios, estado e União; e mobilizar a sociedade em torno da causa educacional.",
+      "resposta_referencia": "Alfabetizar todas as crianças até os sete anos, fortalecer a colaboração entre municípios, Estado e União e mobilizar a sociedade pela educação.",
+      "evidence_sufficient_esperado": true, "ollama_skipped_esperado": false, "observacao_origem": "Chunk 2 do JSON indexado.", "review_status": "pending", "human_evaluation": null
+    },
+    {
+      "id": "json-009", "categoria": "json", "pergunta": "Quais tratamentos combinados causaram os danos mais graves aos cabelos no estudo?", "answerable": true,
+      "source_type_esperado": "json", "document_id_esperado": "usp_news_000049", "titulo_esperado": "Microscópio eletrônico mostra danos estruturais ao cabelo após descoloração, alisamento e calor",
+      "url_esperada": "https://jornal.usp.br/ciencias/microscopio-eletronico-mostra-danos-estruturais-ao-cabelo-apos-descoloracao-alisamento-e-calor/", "source_object_esperado": "raw/usp_news_000049.json",
+      "trecho_referencia": "os danos mais graves foram identificados nos cabelos submetidos simultaneamente à descoloração, ao alisamento ácido e às altas temperaturas",
+      "resposta_referencia": "A combinação de descoloração, alisamento ácido e altas temperaturas produziu os danos mais graves.",
+      "evidence_sufficient_esperado": true, "ollama_skipped_esperado": false, "observacao_origem": "Chunks 2 e 3 do JSON indexado.", "review_status": "pending", "human_evaluation": null
+    },
+    {
+      "id": "json-010", "categoria": "json", "pergunta": "Qual disponibilidade semanal é exigida dos estudantes selecionados para o PET-Saúde Clima?", "answerable": true,
+      "source_type_esperado": "json", "document_id_esperado": "site_b1b2ed7156ff45ce", "titulo_esperado": "USP e Secretaria Municipal de Saúde selecionam estudantes para o PET-Saúde Clima",
+      "url_esperada": "https://jornal.usp.br/campus-ribeirao-preto/usp-e-secretaria-municipal-de-saude-selecionam-estudantes-para-o-pet-saude-clima/", "source_object_esperado": "raw/usp_news_000007.json",
+      "trecho_referencia": "Os estudantes selecionados deverão ter disponibilidade mínima de oito horas semanais",
+      "resposta_referencia": "É exigida disponibilidade mínima de oito horas por semana.",
+      "evidence_sufficient_esperado": true, "ollama_skipped_esperado": false, "observacao_origem": "Chunk 2 do JSON indexado.", "review_status": "pending", "human_evaluation": null
+    },
+    {
+      "id": "pdf-001", "categoria": "pdf", "pergunta": "Qual serviço oferece a Jornada SOFt 2026?", "answerable": true,
+      "source_type_esperado": "pdf", "document_id_esperado": "pdf_como-organizar-financas", "titulo_esperado": "Como organizar as finanças e investir melhor? Serviço da USP abre inscrições para curso",
+      "url_esperada": "https://jornal.usp.br/universidade/como-organizar-as-financas-e-investir-melhor-servico-da-usp-abre-inscricoes-para-curso/", "source_object_esperado": "raw/pdf/como-organizar-financas.pdf",
+      "trecho_referencia": "A Jornada SOFt 2026 é uma a trilha de inteligência financeira oferecida pelo SOF – Serviço de Orientação Financeira da Faculdade de Economia, Administração, Contabilidade e Atuária (FEA) da USP",
+      "resposta_referencia": "A Jornada é oferecida pelo SOF, Serviço de Orientação Financeira da FEA-USP.",
+      "evidence_sufficient_esperado": true, "ollama_skipped_esperado": false, "observacao_origem": "Chunk 1 do PDF indexado.", "review_status": "pending", "human_evaluation": null
+    },
+    {
+      "id": "pdf-002", "categoria": "pdf", "pergunta": "Quando ocorre a Jornada SOFt 2026 e qual é o formato do curso?", "answerable": true,
+      "source_type_esperado": "pdf", "document_id_esperado": "pdf_como-organizar-financas", "titulo_esperado": "Como organizar as finanças e investir melhor? Serviço da USP abre inscrições para curso",
+      "url_esperada": "https://jornal.usp.br/universidade/como-organizar-as-financas-e-investir-melhor-servico-da-usp-abre-inscricoes-para-curso/", "source_object_esperado": "raw/pdf/como-organizar-financas.pdf",
+      "trecho_referencia": "ocorrerá de 6 a 31 de julho. Trata-se de um curso 100% on-line",
+      "resposta_referencia": "A Jornada ocorre de 6 a 31 de julho de 2026 e é um curso totalmente on-line.",
+      "evidence_sufficient_esperado": true, "ollama_skipped_esperado": false, "observacao_origem": "Chunk 1 do PDF indexado.", "review_status": "pending", "human_evaluation": null
+    },
+    {
+      "id": "pdf-003", "categoria": "pdf", "pergunta": "Quais são os quatro módulos do curso de organização financeira?", "answerable": true,
+      "source_type_esperado": "pdf", "document_id_esperado": "pdf_como-organizar-financas", "titulo_esperado": "Como organizar as finanças e investir melhor? Serviço da USP abre inscrições para curso",
+      "url_esperada": "https://jornal.usp.br/universidade/como-organizar-as-financas-e-investir-melhor-servico-da-usp-abre-inscricoes-para-curso/", "source_object_esperado": "raw/pdf/como-organizar-financas.pdf",
+      "trecho_referencia": "Habilidade financeira, Planejamento financeiro, Investimentos e Crédito e Endividamento.",
+      "resposta_referencia": "Habilidade financeira, Planejamento financeiro, Investimentos e Crédito e Endividamento.",
+      "evidence_sufficient_esperado": true, "ollama_skipped_esperado": false, "observacao_origem": "Chunk 2 do PDF indexado.", "review_status": "pending", "human_evaluation": null
+    },
+    {
+      "id": "pdf-004", "categoria": "pdf", "pergunta": "Quais são os três pilares da metodologia SOFt?", "answerable": true,
+      "source_type_esperado": "pdf", "document_id_esperado": "pdf_como-organizar-financas", "titulo_esperado": "Como organizar as finanças e investir melhor? Serviço da USP abre inscrições para curso",
+      "url_esperada": "https://jornal.usp.br/universidade/como-organizar-as-financas-e-investir-melhor-servico-da-usp-abre-inscricoes-para-curso/", "source_object_esperado": "raw/pdf/como-organizar-financas.pdf",
+      "trecho_referencia": "três pilares de atuação: educação, orientação e acompanhamentos financeiros",
+      "resposta_referencia": "Educação, orientação e acompanhamento financeiro.",
+      "evidence_sufficient_esperado": true, "ollama_skipped_esperado": false, "observacao_origem": "Chunk 3 do PDF indexado.", "review_status": "pending", "human_evaluation": null
+    },
+    {
+      "id": "negative-001", "categoria": "fora_do_corpus", "pergunta": "Qual foi o resultado do campeonato intergaláctico de xadrez quântico da USP?", "answerable": false,
+      "source_type_esperado": null, "document_id_esperado": null, "titulo_esperado": null, "url_esperada": null, "source_object_esperado": null,
+      "trecho_referencia": null, "resposta_referencia": "Recusa segura limitada ao corpus local indexado.", "evidence_sufficient_esperado": false, "ollama_skipped_esperado": true,
+      "observacao_origem": "Expressão distintiva ausente nos 663 chunks em verificação lexical.", "review_status": "pending", "human_evaluation": null
+    },
+    {
+      "id": "negative-002", "categoria": "fora_do_corpus", "pergunta": "Quando a USP demonstrou o primeiro teletransporte humano para a Lua?", "answerable": false,
+      "source_type_esperado": null, "document_id_esperado": null, "titulo_esperado": null, "url_esperada": null, "source_object_esperado": null,
+      "trecho_referencia": null, "resposta_referencia": "Recusa segura limitada ao corpus local indexado.", "evidence_sufficient_esperado": false, "ollama_skipped_esperado": true,
+      "observacao_origem": "Expressão distintiva ausente nos 663 chunks em verificação lexical.", "review_status": "pending", "human_evaluation": null
+    },
+    {
+      "id": "negative-003", "categoria": "fora_do_corpus", "pergunta": "Onde foi encontrado o dinossauro lunar estudado pela USP?", "answerable": false,
+      "source_type_esperado": null, "document_id_esperado": null, "titulo_esperado": null, "url_esperada": null, "source_object_esperado": null,
+      "trecho_referencia": null, "resposta_referencia": "Recusa segura limitada ao corpus local indexado.", "evidence_sufficient_esperado": false, "ollama_skipped_esperado": true,
+      "observacao_origem": "Expressão distintiva ausente nos 663 chunks em verificação lexical.", "review_status": "pending", "human_evaluation": null
+    },
+    {
+      "id": "negative-004", "categoria": "fora_do_corpus", "pergunta": "Quem recebeu o Nobel de Física de 2040 por uma pesquisa da USP?", "answerable": false,
+      "source_type_esperado": null, "document_id_esperado": null, "titulo_esperado": null, "url_esperada": null, "source_object_esperado": null,
+      "trecho_referencia": null, "resposta_referencia": "Recusa segura limitada ao corpus local indexado.", "evidence_sufficient_esperado": false, "ollama_skipped_esperado": true,
+      "observacao_origem": "Expressão distintiva ausente nos 663 chunks em verificação lexical.", "review_status": "pending", "human_evaluation": null
+    },
+    {
+      "id": "negative-005", "categoria": "fora_do_corpus", "pergunta": "Como funciona a base submarina da USP na lua Europa de Júpiter?", "answerable": false,
+      "source_type_esperado": null, "document_id_esperado": null, "titulo_esperado": null, "url_esperada": null, "source_object_esperado": null,
+      "trecho_referencia": null, "resposta_referencia": "Recusa segura limitada ao corpus local indexado.", "evidence_sufficient_esperado": false, "ollama_skipped_esperado": true,
+      "observacao_origem": "Expressão distintiva ausente nos 663 chunks em verificação lexical.", "review_status": "pending", "human_evaluation": null
+    },
+    {
+      "id": "negative-006", "categoria": "fora_do_corpus", "pergunta": "Qual energia produz a usina de antimatéria da USP em Saturno?", "answerable": false,
+      "source_type_esperado": null, "document_id_esperado": null, "titulo_esperado": null, "url_esperada": null, "source_object_esperado": null,
+      "trecho_referencia": null, "resposta_referencia": "Recusa segura limitada ao corpus local indexado.", "evidence_sufficient_esperado": false, "ollama_skipped_esperado": true,
+      "observacao_origem": "Expressão distintiva ausente nos 663 chunks em verificação lexical.", "review_status": "pending", "human_evaluation": null
+    }
+  ]
+}

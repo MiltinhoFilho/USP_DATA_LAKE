@@ -3,16 +3,20 @@
 ## Fluxo
 
 ```text
-Jornal da USP → Generator API → MinIO Bronze
-MinIO Bronze → Pipeline API → Silver → PostgreSQL + Qdrant Gold
+Jornal da USP → Generator API → Bronze local
+Bronze local -- upload_minio=true --> MinIO Bronze
+Bronze local ou MinIO Bronze → Pipeline API → Silver → PostgreSQL + Qdrant Gold
 Pergunta → RAG API → Retriever híbrido → avaliação de evidências
         → Ollama local → resposta fundamentada com fontes
 ```
 
 ## Componentes
 
-- **Generator API:** coleta controlada de site e PDF e grava os artefatos brutos.
-- **MinIO/Bronze:** preserva os objetos como recebidos; não é uma API do projeto.
+- **Generator API:** coleta controlada de site e PDF e grava os artefatos brutos
+  na Bronze local. O envio ao MinIO é opcional e ocorre somente quando
+  `upload_minio=true`.
+- **MinIO/Bronze:** recebe opcionalmente os objetos da Bronze local; não é uma API
+  do projeto.
 - **Pipeline API:** lê Bronze, limpa HTML ou extrai PDF, normaliza em texto/Markdown
   e cria chunks de 1200 caracteres com overlap 200.
 - **PostgreSQL/Gold:** guarda chunk, título, URL, autor, categoria e data.
@@ -59,8 +63,15 @@ ou reranker.
 5. O Ollama `gemma3:4b` gera no máximo 96 tokens e permanece carregado por 10 minutos.
 
 O cache BGE-M3 é montado na Pipeline e na RAG como somente leitura; ambas usam
-`HF_HUB_OFFLINE=1` e `TRANSFORMERS_OFFLINE=1`. Import, OpenAPI e health não iniciam
-PostgreSQL, Qdrant, embeddings ou Ollama.
+`HF_HUB_OFFLINE=1` e `TRANSFORMERS_OFFLINE=1`. Importação e OpenAPI não inicializam
+o Retriever. O endpoint `/health` apenas retorna o status e não consulta as
+dependências; entretanto, o lifespan da RAG inicializa o Retriever no startup,
+carregando o BGE-M3, o índice BM25 e o cliente Qdrant antes do atendimento HTTP.
+
+Na carga Gold, `load_postgres=false` com `load_qdrant=true` é aceito pelo modelo
+da requisição, mas normalmente falha operacionalmente: o ponto Qdrant depende do
+`postgres_id` retornado pelo PostgreSQL. O fluxo completo deve carregar o
+PostgreSQL antes do Qdrant.
 
 ## Rastreabilidade e diagnóstico
 

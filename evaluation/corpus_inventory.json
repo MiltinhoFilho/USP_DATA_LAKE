@@ -1,0 +1,1047 @@
+{
+  "scope": "Recorte local indexado do Jornal da USP",
+  "limitations": "Não representa cobertura integral nem amostra estatística de todo o portal.",
+  "summary": {
+    "postgres_rows": 663,
+    "document_ids": 111,
+    "urls": 110,
+    "source_objects": 102,
+    "documents_by_source_type": {
+      "json": 110,
+      "pdf": 1
+    },
+    "documents_by_category": {
+      "(sem categoria)": 1,
+      "Alberto do Amaral": 1,
+      "Artigos": 9,
+      "Atualidades": 13,
+      "Caderno de Cultura": 2,
+      "Campus Ribeirao Preto": 1,
+      "Campus Ribeirão Preto": 26,
+      "Carlos Eduardo Lins da Silva": 1,
+      "Ciências": 6,
+      "Colunistas": 1,
+      "Comunicados": 7,
+      "Cultura": 4,
+      "Cursos": 1,
+      "Danilo Silva Guimarães": 1,
+      "Diversidade": 6,
+      "Eduardo Rocha": 1,
+      "Eventos": 5,
+      "Institucional": 3,
+      "Janice Theodoro da Silva": 1,
+      "Jornal da USP no Ar": 4,
+      "José Carlos Simon Farah": 1,
+      "José Eli da Veiga": 1,
+      "Luli Radfahrer": 1,
+      "Marcelo Caldeira Pedroso": 1,
+      "Marcos Buckeridge": 1,
+      "Paulo Saldiva": 1,
+      "Rádio USP": 2,
+      "Sinopses Podcasts": 1,
+      "Universidade": 5,
+      "Uspnews": 3
+    }
+  },
+  "documents": [
+    {
+      "document_id": "usp_news_000028",
+      "titulo": "Abertas as inscrições para exposição de pôsteres no Dia do Meio Ambiente",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/abertas-as-inscricoes-para-exposicao-de-posteres-no-dia-do-meio-ambiente/",
+      "source_object": "raw/usp_news_000028.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 1
+    },
+    {
+      "document_id": "usp_news_000093",
+      "titulo": "Abertas as inscrições para o “Curso de Inverno em Saúde Pública”",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/abertas-as-inscricoes-para-o-curso-de-inverno-em-saude-publica/",
+      "source_object": "raw/usp_news_000093.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 2
+    },
+    {
+      "document_id": "usp_news_000057",
+      "titulo": "Ação climática e saúde ambiental pautam semana de debates na Faculdade de Saúde Pública da USP",
+      "url": "https://jornal.usp.br/universidade/acao-climatica-e-saude-ambiental-pautam-semana-de-debates-na-faculdade-de-saude-publica-da-usp/",
+      "source_object": "raw/usp_news_000057.json",
+      "source_type": "json",
+      "categoria": "Eventos",
+      "chunks": 10
+    },
+    {
+      "document_id": "usp_news_000064",
+      "titulo": "Acordo entre Mercosul e União Europeia amplia debate sobre impactos no Brasil",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/acordo-entre-mercosul-e-uniao-europeia-amplia-debate-sobre-impactos-no-brasil/",
+      "source_object": "raw/usp_news_000064.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 7
+    },
+    {
+      "document_id": "usp_news_000056",
+      "titulo": "A excelência dos programas de pós-graduação da USP",
+      "url": "https://jornal.usp.br/comunicados/a-excelencia-dos-programas-de-pos-graduacao-da-usp/",
+      "source_object": "raw/usp_news_000056.json",
+      "source_type": "json",
+      "categoria": "Artigos",
+      "chunks": 4
+    },
+    {
+      "document_id": "site_76233d00b2a1d38b",
+      "titulo": "Alfabetização na idade certa mobiliza formações na Bahia",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/alfabetizacao-na-idade-certa-mobiliza-formacoes-na-bahia/",
+      "source_object": "raw/usp_news_000006.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 9
+    },
+    {
+      "document_id": "usp_news_000061",
+      "titulo": "A nutrição clínica e sua importância na manutenção dos cuidados do paciente oncológico",
+      "url": "https://jornal.usp.br/atualidades/a-nutricao-clinica-e-sua-importancia-na-manutencao-dos-cuidados-do-paciente-oncologico/",
+      "source_object": "raw/usp_news_000061.json",
+      "source_type": "json",
+      "categoria": "Atualidades",
+      "chunks": 4
+    },
+    {
+      "document_id": "usp_news_000023",
+      "titulo": "Atual crise de Ebola no Congo é mais transmissível que a epidemia de 2014",
+      "url": "https://jornal.usp.br/radio-usp/atual-crise-de-ebola-no-congo-e-mais-transmissivel-que-a-epidemia-de-2014/",
+      "source_object": "raw/usp_news_000023.json",
+      "source_type": "json",
+      "categoria": "Jornal da USP no Ar",
+      "chunks": 5
+    },
+    {
+      "document_id": "usp_news_000046",
+      "titulo": "Aula aberta vai discutir espiritualidade durante tratamento de oncologia",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/aula-aberta-vai-discutir-espiritualidade-durante-tratamento-de-oncologia/",
+      "source_object": "raw/usp_news_000046.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 2
+    },
+    {
+      "document_id": "site_49a6fa435ccb36a9",
+      "titulo": "A verdadeira face da cultura de inovação",
+      "url": "https://jornal.usp.br/articulistas/marcelo-caldeira-pedroso/a-verdadeira-face-da-cultura-de-inovacao/",
+      "source_object": "raw/usp_news_000001.json",
+      "source_type": "json",
+      "categoria": "Marcelo Caldeira Pedroso",
+      "chunks": 7
+    },
+    {
+      "document_id": "usp_news_000062",
+      "titulo": "Bolsa Família reduziu hospitalizações e aumentou empregabilidade, aponta estudo",
+      "url": "https://jornal.usp.br/radio-usp/bolsa-familia-reduziu-hospitalizacoes-e-aumentou-empregabilidade-aponta-estudo/",
+      "source_object": "raw/usp_news_000062.json",
+      "source_type": "json",
+      "categoria": "Jornal da USP no Ar",
+      "chunks": 4
+    },
+    {
+      "document_id": "usp_news_000092",
+      "titulo": "Brazilian researchers identify new species of microorganism in active volcano in Antarctica",
+      "url": "https://jornal.usp.br/uspnews/brazilian-researchers-identify-new-species-of-microorganism-in-active-volcano-in-antarctica/",
+      "source_object": "raw/usp_news_000092.json",
+      "source_type": "json",
+      "categoria": "Uspnews",
+      "chunks": 12
+    },
+    {
+      "document_id": "usp_news_000020",
+      "titulo": "Câmara dos Deputados aprova o fim da escala 6×1; PEC segue para o Senado",
+      "url": "https://jornal.usp.br/atualidades/proposta-do-fim-da-escala-6x1-nao-esta-preocupada-com-a-questao-da-produtividade/",
+      "source_object": "raw/usp_news_000020.json",
+      "source_type": "json",
+      "categoria": "Atualidades",
+      "chunks": 6
+    },
+    {
+      "document_id": "usp_news_000043",
+      "titulo": "Canabidiol ganha espaço no esporte como aliado na recuperação muscular",
+      "url": "https://jornal.usp.br/atualidades/canabidiol-ganha-espaco-no-esporte-como-aliado-na-recuperacao-muscular/",
+      "source_object": "raw/usp_news_000043.json",
+      "source_type": "json",
+      "categoria": "Atualidades",
+      "chunks": 7
+    },
+    {
+      "document_id": "usp_news_000041",
+      "titulo": "CEM transforma dados urbanos em ferramenta para pesquisas e políticas públicas",
+      "url": "https://jornal.usp.br/atualidades/cem-transforma-dados-urbanos-em-ferramenta-para-pesquisas-e-politicas-publicas/",
+      "source_object": "raw/usp_news_000041.json",
+      "source_type": "json",
+      "categoria": "Atualidades",
+      "chunks": 5
+    },
+    {
+      "document_id": "usp_news_000048",
+      "titulo": "Cidades inteligentes ou vigiadas?",
+      "url": "https://jornal.usp.br/radio-usp/cidades-inteligentes-ou-vigiadas/",
+      "source_object": "raw/usp_news_000048.json",
+      "source_type": "json",
+      "categoria": "Luli Radfahrer",
+      "chunks": 2
+    },
+    {
+      "document_id": "usp_news_000079",
+      "titulo": "Cientistas brasileiras debatem avanços e experiências de pesquisas em evento de 70 anos do Ipen",
+      "url": "https://jornal.usp.br/universidade/cientistas-brasileiras-debatem-avancos-e-experiencias-de-pesquisas-em-evento-de-70-anos-do-ipen/",
+      "source_object": "raw/usp_news_000079.json",
+      "source_type": "json",
+      "categoria": "Eventos",
+      "chunks": 4
+    },
+    {
+      "document_id": "usp_news_000094",
+      "titulo": "Cinemas perdem público, mas bibliotecas e shows continuam com a mesma taxa de visitantes",
+      "url": "https://jornal.usp.br/atualidades/cinemas-perdem-publico-mas-bibliotecas-e-shows-continuam-com-a-mesma-taxa-de-visitantes/",
+      "source_object": "raw/usp_news_000094.json",
+      "source_type": "json",
+      "categoria": "Atualidades",
+      "chunks": 3
+    },
+    {
+      "document_id": "pdf_como-organizar-financas",
+      "titulo": "Como organizar as finanças e investir melhor? Serviço da USP abre inscrições para curso",
+      "url": "https://jornal.usp.br/universidade/como-organizar-as-financas-e-investir-melhor-servico-da-usp-abre-inscricoes-para-curso/",
+      "source_object": "raw/pdf/como-organizar-financas.pdf",
+      "source_type": "pdf",
+      "categoria": "(sem categoria)",
+      "chunks": 4
+    },
+    {
+      "document_id": "usp_news_000001",
+      "titulo": "Como organizar as finanças e investir melhor? Serviço da USP abre inscrições para curso",
+      "url": "https://jornal.usp.br/universidade/como-organizar-as-financas-e-investir-melhor-servico-da-usp-abre-inscricoes-para-curso/",
+      "source_object": "usp_news_000001.json",
+      "source_type": "json",
+      "categoria": "Cursos",
+      "chunks": 4
+    },
+    {
+      "document_id": "usp_news_000095",
+      "titulo": "Como São Paulo tem alocado recursos para educação?​",
+      "url": "https://jornal.usp.br/ciencias/como-sao-paulo-tem-alocado-recursos-para-educacao/",
+      "source_object": "raw/usp_news_000095.json",
+      "source_type": "json",
+      "categoria": "Ciências",
+      "chunks": 12
+    },
+    {
+      "document_id": "usp_news_000069",
+      "titulo": "Concerto gratuito na USP mostra faces da violência e discute tema por meio da música",
+      "url": "https://jornal.usp.br/cadernodecultura/concerto-gratuito-na-usp-mostra-faces-da-violencia-e-discute-tema-por-meio-da-musica/",
+      "source_object": "raw/usp_news_000069.json",
+      "source_type": "json",
+      "categoria": "Caderno de Cultura",
+      "chunks": 3
+    },
+    {
+      "document_id": "usp_news_000089",
+      "titulo": "Conversa aborda diversidade e comunicação humanizada no cuidado à população LGBTQIA+",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/conversa-aborda-diversidade-e-comunicacao-humanizada-no-cuidado-a-populacao-lgbtqia/",
+      "source_object": "raw/usp_news_000089.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 2
+    },
+    {
+      "document_id": "usp_news_000029",
+      "titulo": "Conversaria",
+      "url": "https://jornal.usp.br/sinopses-podcasts/conversaria/",
+      "source_object": "raw/usp_news_000029.json",
+      "source_type": "json",
+      "categoria": "Sinopses Podcasts",
+      "chunks": 1
+    },
+    {
+      "document_id": "usp_news_000065",
+      "titulo": "Covid longa: abordagem inédita une 15 especialidades e reduz peregrinação de pacientes",
+      "url": "https://jornal.usp.br/ciencias/covid-longa-abordagem-inedita-une-15-especialidades-e-reduz-peregrinacao-de-pacientes/",
+      "source_object": "raw/usp_news_000065.json",
+      "source_type": "json",
+      "categoria": "Ciências",
+      "chunks": 1
+    },
+    {
+      "document_id": "usp_news_000044",
+      "titulo": "Crescimento da prática esportiva impulsiona busca por eficiência na suplementação",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/crescimento-da-pratica-esportiva-impulsiona-busca-por-eficiencia-na-suplementacao/",
+      "source_object": "raw/usp_news_000044.json",
+      "source_type": "json",
+      "categoria": "Atualidades",
+      "chunks": 6
+    },
+    {
+      "document_id": "usp_news_000006",
+      "titulo": "Crime organizado, terrorismo e os limites da soberania nacional",
+      "url": "https://jornal.usp.br/radio-usp/crime-organizado-terrorismo-e-os-limites-da-soberania-nacional/",
+      "source_object": "raw/usp_news_000006.json",
+      "source_type": "json",
+      "categoria": "Alberto do Amaral",
+      "chunks": 3
+    },
+    {
+      "document_id": "usp_news_000039",
+      "titulo": "Cruesp divulga nota sobre negociação da campanha salarial com Fórum das Seis",
+      "url": "https://jornal.usp.br/comunicados/cruesp-divulga-nota-sobre-negociacao-da-campanha-salarial-com-forum-das-seis/",
+      "source_object": "raw/usp_news_000039.json",
+      "source_type": "json",
+      "categoria": "Comunicados",
+      "chunks": 2
+    },
+    {
+      "document_id": "usp_news_000058",
+      "titulo": "Cruesp retoma discussões sobre o impacto da reforma tributária no financiamento das universidades",
+      "url": "https://jornal.usp.br/comunicados/cruesp-retoma-discussoes-sobre-o-impacto-da-reforma-tributaria-no-financiamento-das-universidades/",
+      "source_object": "raw/usp_news_000058.json",
+      "source_type": "json",
+      "categoria": "Comunicados",
+      "chunks": 3
+    },
+    {
+      "document_id": "usp_news_000033",
+      "titulo": "Currículo eurocêntrico apaga culturas africanas desde a pré-escola",
+      "url": "https://jornal.usp.br/diversidade/curriculo-eurocentrico-apaga-culturas-africanas-desde-a-pre-escola/",
+      "source_object": "raw/usp_news_000033.json",
+      "source_type": "json",
+      "categoria": "Diversidade",
+      "chunks": 9
+    },
+    {
+      "document_id": "usp_news_000071",
+      "titulo": "Da ideia ao impacto: USP em Ribeirão Preto constrói rede para transformar pesquisa em soluções para a sociedade",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/da-ideia-ao-impacto-como-a-usp-em-ribeirao-preto-constroi-uma-rede-para-transformar-pesquisa-em-solucoes-para-a-sociedade/",
+      "source_object": "raw/usp_news_000071.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirao Preto",
+      "chunks": 33
+    },
+    {
+      "document_id": "usp_news_000024",
+      "titulo": "Desaparecimento do site FiveThirtyEight é algo a se lamentar",
+      "url": "https://jornal.usp.br/radio-usp/desaparecimento-do-site-five-thirty-eight-e-algo-para-se-lamentar/",
+      "source_object": "raw/usp_news_000024.json",
+      "source_type": "json",
+      "categoria": "Carlos Eduardo Lins da Silva",
+      "chunks": 2
+    },
+    {
+      "document_id": "usp_news_000076",
+      "titulo": "“Diálogos na USP” discute a influência dos Estados Unidos na ditadura militar",
+      "url": "https://jornal.usp.br/atualidades/dialogos-na-usp-discute-a-influencia-dos-estados-unidos-na-ditadura-militar/",
+      "source_object": "raw/usp_news_000076.json",
+      "source_type": "json",
+      "categoria": "Atualidades",
+      "chunks": 2
+    },
+    {
+      "document_id": "usp_news_000014",
+      "titulo": "Doação de livros da USP em Ribeirão Preto fortalece formação jurídica em Timor-Leste",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/doacao-de-livros-da-usp-de-ribeirao-preto-fortalece-formacao-juridica-em-timor-leste/",
+      "source_object": "raw/usp_news_000014.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 5
+    },
+    {
+      "document_id": "usp_news_000097",
+      "titulo": "Doenças genéticas podem ser tratadas por transplante de mitocôndria",
+      "url": "https://jornal.usp.br/radio-usp/doencas-geneticas-podem-ser-tratadas-por-transplante-de-mitocondria/",
+      "source_object": "raw/usp_news_000097.json",
+      "source_type": "json",
+      "categoria": "Eduardo Rocha",
+      "chunks": 1
+    },
+    {
+      "document_id": "usp_news_000013",
+      "titulo": "E-book apresenta estudos de caso e experiências brasileiras que promovem a saúde do solo",
+      "url": "https://jornal.usp.br/universidade/e-book-apresenta-estudos-de-caso-e-experiencias-brasileiras-que-promovem-a-saude-do-solo/",
+      "source_object": "raw/usp_news_000013.json",
+      "source_type": "json",
+      "categoria": "Universidade",
+      "chunks": 7
+    },
+    {
+      "document_id": "usp_news_000066",
+      "titulo": "E-book gratuito reúne opções de lanches sem glúten e de baixo custo desenvolvidas em pesquisas",
+      "url": "https://jornal.usp.br/universidade/usp-lanca-e-book-gratuito-com-receitas-de-lanches-sem-gluten-e-de-baixo-custo/",
+      "source_object": "raw/usp_news_000066.json",
+      "source_type": "json",
+      "categoria": "Universidade",
+      "chunks": 6
+    },
+    {
+      "document_id": "usp_news_000017",
+      "titulo": "Economia circular e invisibilidade de catadores são temas de exposição",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/economia-circular-e-invisibilidade-de-catadores-sao-tema-de-exposicao/",
+      "source_object": "raw/usp_news_000017.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 4
+    },
+    {
+      "document_id": "usp_news_000054",
+      "titulo": "Economia da USP lança campanha para financiar bolsas de intercâmbio e idiomas para estudantes negros",
+      "url": "https://jornal.usp.br/diversidade/faculdade-de-economia-da-usp-lanca-campanha-para-financiar-bolsas-de-intercambio-e-idiomas-para-estudantes-negros/",
+      "source_object": "raw/usp_news_000054.json",
+      "source_type": "json",
+      "categoria": "Diversidade",
+      "chunks": 5
+    },
+    {
+      "document_id": "usp_news_000083",
+      "titulo": "Edição de 27 de maio de 2026",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/edicao-de-27-de-maio-de-2026/",
+      "source_object": "raw/usp_news_000083.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 2
+    },
+    {
+      "document_id": "usp_news_000060",
+      "titulo": "Edição de 28 de maio de 2026",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/edicao-de-28-de-maio-de-2026/",
+      "source_object": "raw/usp_news_000060.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 2
+    },
+    {
+      "document_id": "usp_news_000081",
+      "titulo": "Encontro no Museu do Ipiranga busca reinterpretar modos de vida rurais",
+      "url": "https://jornal.usp.br/diversidade/encontro-no-museu-do-ipiranga-busca-reinterpretar-modos-de-vida-rurais/",
+      "source_object": "raw/usp_news_000081.json",
+      "source_type": "json",
+      "categoria": "Diversidade",
+      "chunks": 9
+    },
+    {
+      "document_id": "usp_news_000055",
+      "titulo": "Estudantes da USP reinventam o drama e as paixões de Hamlet",
+      "url": "https://jornal.usp.br/cultura/estudantes-da-usp-reinventam-o-drama-e-as-paixoes-de-hamlet/",
+      "source_object": "raw/usp_news_000055.json",
+      "source_type": "json",
+      "categoria": "Cultura",
+      "chunks": 8
+    },
+    {
+      "document_id": "usp_news_000032",
+      "titulo": "Estudo aponta que representatividade e diversidade entre professores beneficiam formação de alunos",
+      "url": "https://jornal.usp.br/radio-usp/estudo-aponta-que-representatividade-e-diversidade-entre-professores-beneficia-formacao-de-alunos/",
+      "source_object": "raw/usp_news_000032.json",
+      "source_type": "json",
+      "categoria": "Jornal da USP no Ar",
+      "chunks": 4
+    },
+    {
+      "document_id": "usp_news_000034",
+      "titulo": "Exposição no MAC mostra a obra e a trajetória de Gilvan Samico",
+      "url": "https://jornal.usp.br/cultura/exposicao-no-mac-mostra-a-obra-e-a-trajetoria-de-gilvan-samico/",
+      "source_object": "raw/usp_news_000034.json",
+      "source_type": "json",
+      "categoria": "Cultura",
+      "chunks": 5
+    },
+    {
+      "document_id": "usp_news_000070",
+      "titulo": "Exposição “Quilombo do Saracura Vai-Vai” tem visita mediada no Domingo na Yayá",
+      "url": "https://jornal.usp.br/cadernodecultura/exposicao-quilombo-do-saracura-vai-vai/",
+      "source_object": "raw/usp_news_000070.json",
+      "source_type": "json",
+      "categoria": "Caderno de Cultura",
+      "chunks": 4
+    },
+    {
+      "document_id": "usp_news_000009",
+      "titulo": "Exposição une arte e ciência para promover reflexões sobre parto, nascimento e direitos reprodutivos",
+      "url": "https://jornal.usp.br/universidade/exposicao-une-arte-e-ciencia-para-promover-reflexoes-sobre-parto-nascimento-e-direitos-reprodutivos/",
+      "source_object": "raw/usp_news_000009.json",
+      "source_type": "json",
+      "categoria": "Universidade",
+      "chunks": 8
+    },
+    {
+      "document_id": "usp_news_000004",
+      "titulo": "Falta de preparo de médicos e idadismo causam problemas a mulheres na menopausa",
+      "url": "https://jornal.usp.br/atualidades/falta-de-preparo-de-medicos-e-idadismo-dificultam-mulheres-a-lidar-com-menopausa/",
+      "source_object": "raw/usp_news_000004.json",
+      "source_type": "json",
+      "categoria": "Atualidades",
+      "chunks": 6
+    },
+    {
+      "document_id": "usp_news_000052",
+      "titulo": "Fuvest divulga cronograma completo do vestibular da USP para ingresso em 2027",
+      "url": "https://jornal.usp.br/universidade/fuvest-divulga-cronograma-completo-do-vestibular-da-usp-para-ingresso-em-2027/",
+      "source_object": "raw/usp_news_000052.json",
+      "source_type": "json",
+      "categoria": "Universidade",
+      "chunks": 6
+    },
+    {
+      "document_id": "usp_news_000008",
+      "titulo": "Geopolítica dos vetores: o Brasil em um mundo de fluxos interdependentes",
+      "url": "https://jornal.usp.br/articulistas/marcos-buckeridge/geopolitica-dos-vetores-o-brasil-em-um-mundo-de-fluxos-interdependentes/",
+      "source_object": "raw/usp_news_000008.json",
+      "source_type": "json",
+      "categoria": "Marcos Buckeridge",
+      "chunks": 9
+    },
+    {
+      "document_id": "usp_news_000045",
+      "titulo": "Global study shows varied trend in obesity worldwide and criticizes the term epidemic",
+      "url": "https://jornal.usp.br/uspnews/global-study-shows-varied-trend-in-obesity-worldwide-and-criticizes-the-term-epidemic/",
+      "source_object": "raw/usp_news_000045.json",
+      "source_type": "json",
+      "categoria": "Uspnews",
+      "chunks": 14
+    },
+    {
+      "document_id": "usp_news_000050",
+      "titulo": "Guia para o bom e para o mau governo",
+      "url": "https://jornal.usp.br/articulistas/janice-theodoro-da-silva/guia-para-o-bom-e-para-o-mal-governo/",
+      "source_object": "raw/usp_news_000050.json",
+      "source_type": "json",
+      "categoria": "Janice Theodoro da Silva",
+      "chunks": 10
+    },
+    {
+      "document_id": "usp_news_000016",
+      "titulo": "IDH recorde demonstra importância de políticas públicas e transformações sociais",
+      "url": "https://jornal.usp.br/atualidades/idh-recorde-demonstra-importancia-de-politicas-publicas-e-transformacoes-sociais/",
+      "source_object": "raw/usp_news_000016.json",
+      "source_type": "json",
+      "categoria": "Atualidades",
+      "chunks": 6
+    },
+    {
+      "document_id": "usp_news_000059",
+      "titulo": "Incentivo ao doping busca aprimorar a performance esportiva, mas custo pode ser alto para os atletas",
+      "url": "https://jornal.usp.br/atualidades/incentivo-ao-doping-busca-aprimorar-a-performance-esportiva-mas-custo-pode-ser-alto-para-os-atletas/",
+      "source_object": "raw/usp_news_000059.json",
+      "source_type": "json",
+      "categoria": "Atualidades",
+      "chunks": 11
+    },
+    {
+      "document_id": "usp_news_000007",
+      "titulo": "Incontinência urinária afeta qualidade de vida e pode ser prevenida com exercícios",
+      "url": "https://jornal.usp.br/radio-usp/incontinencia-urinaria-afeta-qualidade-de-vida-e-pode-ser-prevenida-com-exercicios/",
+      "source_object": "raw/usp_news_000007.json",
+      "source_type": "json",
+      "categoria": "José Carlos Simon Farah",
+      "chunks": 2
+    },
+    {
+      "document_id": "usp_news_000038",
+      "titulo": "Inscrições abertas para curso que usa orquídeas como modelo para estudar biologia e conservação",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/inscricoes-abertas-para-curso-que-usa-orquideas-como-modelo-para-estudar-biologia-e-conservacao/",
+      "source_object": "raw/usp_news_000038.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 2
+    },
+    {
+      "document_id": "usp_news_000075",
+      "titulo": "Inscrições prorrogadas para a Escola de Inverno em Biociências e Biotecnologia",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/inscricoes-abertas-para-escola-de-inverno-em-biociencias-e-biotecnologia/",
+      "source_object": "raw/usp_news_000075.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 2
+    },
+    {
+      "document_id": "usp_news_000036",
+      "titulo": "Livro da Fuvest 2027, “Memórias de Martha” é tema de palestra na USP",
+      "url": "https://jornal.usp.br/universidade/livro-da-fuvest-2027-memorias-de-martha-e-tema-de-palestra-na-usp/",
+      "source_object": "raw/usp_news_000036.json",
+      "source_type": "json",
+      "categoria": "Eventos",
+      "chunks": 4
+    },
+    {
+      "document_id": "usp_news_000019",
+      "titulo": "Livro resgata a quinta década de transformações na Faculdade de Medicina de Ribeirão Preto",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/livro-resgata-a-quinta-decada-de-transformacoes-na-faculdade-de-medicina-de-ribeirao-preto/",
+      "source_object": "raw/usp_news_000019.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 3
+    },
+    {
+      "document_id": "usp_news_000030",
+      "titulo": "Livro traz pedagogias e vozes periféricas do hip hop",
+      "url": "https://jornal.usp.br/diversidade/pedagogias-e-vozes-perifericas-do-hip-hop/",
+      "source_object": "raw/usp_news_000030.json",
+      "source_type": "json",
+      "categoria": "Diversidade",
+      "chunks": 3
+    },
+    {
+      "document_id": "usp_news_000010",
+      "titulo": "Manifestação de docentes da USP em apoio à Reitoria, aos colegiados e às direções",
+      "url": "https://jornal.usp.br/artigos/manifestacao-de-docentes-da-usp-em-apoio-a-reitoria-aos-colegiados-e-as-direcoes/",
+      "source_object": "raw/usp_news_000010.json",
+      "source_type": "json",
+      "categoria": "Artigos",
+      "chunks": 80
+    },
+    {
+      "document_id": "usp_news_000098",
+      "titulo": "Manifestação dos dirigentes da USP sobre suspensão da reunião do Conselho Universitário",
+      "url": "https://jornal.usp.br/comunicados/manifestacao-dos-dirigentes-da-usp-sobre-suspensao-da-reuniao-do-conselho-universitario/",
+      "source_object": "raw/usp_news_000098.json",
+      "source_type": "json",
+      "categoria": "Comunicados",
+      "chunks": 6
+    },
+    {
+      "document_id": "usp_news_000100",
+      "titulo": "Mentes em Pauta #13: Entre os espaços que ocupamos e as pessoas que nos transformam",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/mentes-em-pauta-13-entre-os-espacos-que-ocupamos-e-as-pessoas-que-nos-transformam/",
+      "source_object": "raw/usp_news_000100.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 4
+    },
+    {
+      "document_id": "usp_news_000049",
+      "titulo": "Microscópio eletrônico mostra danos estruturais ao cabelo após descoloração, alisamento e calor",
+      "url": "https://jornal.usp.br/ciencias/microscopio-eletronico-mostra-danos-estruturais-ao-cabelo-apos-descoloracao-alisamento-e-calor/",
+      "source_object": "raw/usp_news_000049.json",
+      "source_type": "json",
+      "categoria": "Ciências",
+      "chunks": 10
+    },
+    {
+      "document_id": "usp_news_000035",
+      "titulo": "Mobilidade urbana e o futuro do transporte público no Brasil",
+      "url": "https://jornal.usp.br/artigos/mobilidade-urbana-e-o-futuro-do-transporte-publico-no-brasil/",
+      "source_object": "raw/usp_news_000035.json",
+      "source_type": "json",
+      "categoria": "Artigos",
+      "chunks": 8
+    },
+    {
+      "document_id": "usp_news_000026",
+      "titulo": "Morre a professora Angelita Habr-Gama, primeira mulher residente de cirurgia do Hospital das Clínicas da USP",
+      "url": "https://jornal.usp.br/universidade/morre-a-professora-angelita-habr-gama-primeira-mulher-residente-de-cirurgia-do-hospital-das-clinicas-da-usp/",
+      "source_object": "raw/usp_news_000026.json",
+      "source_type": "json",
+      "categoria": "Comunicados",
+      "chunks": 4
+    },
+    {
+      "document_id": "usp_news_000099",
+      "titulo": "Nota dos pró-reitores da USP à comunidade acadêmica em apoio ao reitor e à vice-reitora da Universidade",
+      "url": "https://jornal.usp.br/institucional/nota-dos-pro-reitores-da-usp-a-comunidade-academica-em-apoio-ao-reitor-e-a-vice-reitora-da-universidade/",
+      "source_object": "raw/usp_news_000099.json",
+      "source_type": "json",
+      "categoria": "Comunicados",
+      "chunks": 2
+    },
+    {
+      "document_id": "usp_news_000074",
+      "titulo": "Novo escritório da USP intensificará a integração entre a Universidade e a sociedade",
+      "url": "https://jornal.usp.br/institucional/novo-escritorio-da-usp-intensificara-a-integracao-entre-a-universidade-e-a-sociedade/",
+      "source_object": "raw/usp_news_000074.json",
+      "source_type": "json",
+      "categoria": "Institucional",
+      "chunks": 5
+    },
+    {
+      "document_id": "usp_news_000053",
+      "titulo": "O café e o despertar dos sentidos e emoções",
+      "url": "https://jornal.usp.br/artigos/o-cafe-e-o-despertar-dos-sentidos-e-emocoes/",
+      "source_object": "raw/usp_news_000053.json",
+      "source_type": "json",
+      "categoria": "Artigos",
+      "chunks": 15
+    },
+    {
+      "document_id": "usp_news_000084",
+      "titulo": "Olimpíada Brasileira de Robótica realiza etapa regional na USP em São Carlos",
+      "url": "https://jornal.usp.br/universidade/usp-em-sao-carlos-recebe-etapa-regional-da-olimpiada-brasileira-de-robotica-2/",
+      "source_object": "raw/usp_news_000084.json",
+      "source_type": "json",
+      "categoria": "Eventos",
+      "chunks": 6
+    },
+    {
+      "document_id": "usp_news_000022",
+      "titulo": "OMS alerta para aumento de perda auditiva entre jovens",
+      "url": "https://jornal.usp.br/radio-usp/oms-alerta-para-aumento-de-perda-auditiva-entre-jovens/",
+      "source_object": "raw/usp_news_000022.json",
+      "source_type": "json",
+      "categoria": "Jornal da USP no Ar",
+      "chunks": 4
+    },
+    {
+      "document_id": "usp_news_000068",
+      "titulo": "ONU avança em decisão histórica sobre justiça climática",
+      "url": "https://jornal.usp.br/radio-usp/onu-avanca-em-decisao-historica-sobre-justica-climatica/",
+      "source_object": "raw/usp_news_000068.json",
+      "source_type": "json",
+      "categoria": "José Eli da Veiga",
+      "chunks": 1
+    },
+    {
+      "document_id": "site_90937f713d0a97b7",
+      "titulo": "O primeiro passo na internacionalização da Com-Arte",
+      "url": "https://jornal.usp.br/artigos/o-primeiro-passo-na-internacionalizacao-da-com-arte/",
+      "source_object": "raw/usp_news_000002.json",
+      "source_type": "json",
+      "categoria": "Artigos",
+      "chunks": 5
+    },
+    {
+      "document_id": "usp_news_000085",
+      "titulo": "Os riscos do encolhimento de áreas verdes nas cidades",
+      "url": "https://jornal.usp.br/atualidades/os-riscos-do-encolhimento-de-areas-verdes-nas-cidades/",
+      "source_object": "raw/usp_news_000085.json",
+      "source_type": "json",
+      "categoria": "Atualidades",
+      "chunks": 4
+    },
+    {
+      "document_id": "usp_news_000015",
+      "titulo": "Pasteurização do passado: as máquinas de afeto",
+      "url": "https://jornal.usp.br/artigos/pasteurizacao-do-passado-as-maquinas-de-afeto/",
+      "source_object": "raw/usp_news_000015.json",
+      "source_type": "json",
+      "categoria": "Artigos",
+      "chunks": 8
+    },
+    {
+      "document_id": "usp_news_000080",
+      "titulo": "Peça conta a história do pugilista caribenho Emile Griffith",
+      "url": "https://jornal.usp.br/cultura/peca-conta-a-historia-do-pugilista-caribenho-emile-griffith/",
+      "source_object": "raw/usp_news_000080.json",
+      "source_type": "json",
+      "categoria": "Cultura",
+      "chunks": 3
+    },
+    {
+      "document_id": "usp_news_000072",
+      "titulo": "Por um pacto uspiano",
+      "url": "https://jornal.usp.br/artigos/por-um-pacto-uspiano/",
+      "source_object": "raw/usp_news_000072.json",
+      "source_type": "json",
+      "categoria": "Artigos",
+      "chunks": 6
+    },
+    {
+      "document_id": "usp_news_000040",
+      "titulo": "Programa Universitário por um Dia celebra uma década de aproximação entre escola e Universidade",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/universitario-por-um-dia-celebra-uma-decada-de-aproximacao-entre-escola-e-universidade/",
+      "source_object": "raw/usp_news_000040.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 4
+    },
+    {
+      "document_id": "usp_news_000018",
+      "titulo": "Projeto da USP precisa de voluntários para mapear dificuldades sobre tecnologia na terceira idade",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/projeto-da-usp-precisa-de-voluntarios-para-mapear-dificuldades-sobre-tecnologia-na-terceira-idade/",
+      "source_object": "raw/usp_news_000018.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 2
+    },
+    {
+      "document_id": "usp_news_000090",
+      "titulo": "Projeto da USP usa dança e cultura para fortalecer saúde emocional de adolescentes",
+      "url": "https://jornal.usp.br/universidade/projeto-da-usp-usa-danca-e-cultura-para-fortalecer-saude-emocional-de-adolescentes/",
+      "source_object": "raw/usp_news_000090.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 6
+    },
+    {
+      "document_id": "usp_news_000047",
+      "titulo": "Pró-reitor fala sobre desafios e projetos para o fortalecimento da pós-graduação da USP",
+      "url": "https://jornal.usp.br/comunicados/pro-reitor-fala-sobre-desafios-e-projetos-para-o-fortalecimento-da-pos-graduacao-da-usp/",
+      "source_object": "raw/usp_news_000047.json",
+      "source_type": "json",
+      "categoria": "Comunicados",
+      "chunks": 4
+    },
+    {
+      "document_id": "usp_news_000088",
+      "titulo": "Protagonismo transgênero na ciência e saúde é tema de workshop",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/protagonismo-transgenero-na-ciencia-e-saude-e-tema-de-workshop/",
+      "source_object": "raw/usp_news_000088.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 2
+    },
+    {
+      "document_id": "usp_news_000031",
+      "titulo": "Psicologia indígena e impacto social",
+      "url": "https://jornal.usp.br/articulistas/danilo-silva-guimaraes/psicologia-indigena-e-impacto-social/",
+      "source_object": "raw/usp_news_000031.json",
+      "source_type": "json",
+      "categoria": "Danilo Silva Guimarães",
+      "chunks": 7
+    },
+    {
+      "document_id": "site_f2a1c9d9efd110dd",
+      "titulo": "Quando o jogo sai da tela: os riscos da gamificação no cotidiano",
+      "url": "https://jornal.usp.br/radio-usp/quando-o-jogo-sai-da-tela-os-riscos-da-gamificacao-no-cotidiano/",
+      "source_object": "raw/usp_news_000010.json",
+      "source_type": "json",
+      "categoria": "Colunistas",
+      "chunks": 2
+    },
+    {
+      "document_id": "usp_news_000077",
+      "titulo": "Quanto custa uma vida digna? Projeto estima os salários necessários para cobrir despesas",
+      "url": "https://jornal.usp.br/diversidade/quanto-custa-uma-vida-digna-projeto-estima-os-salarios-necessarios-para-cobrir-despesas/",
+      "source_object": "raw/usp_news_000077.json",
+      "source_type": "json",
+      "categoria": "Diversidade",
+      "chunks": 10
+    },
+    {
+      "document_id": "usp_news_000082",
+      "titulo": "Queda da fertilidade masculina acende alerta sobre hábitos modernos e poluição",
+      "url": "https://jornal.usp.br/radio-usp/queda-da-fertilidade-masculina-acende-alerta-sobre-habitos-modernos-e-poluicao/",
+      "source_object": "raw/usp_news_000082.json",
+      "source_type": "json",
+      "categoria": "Rádio USP",
+      "chunks": 8
+    },
+    {
+      "document_id": "usp_news_000037",
+      "titulo": "Referência em patrimônio cultural e urbanismo histórico, Gabor Sonkoly participa de encontros na USP",
+      "url": "https://jornal.usp.br/universidade/referencia-em-patrimonio-cultural-e-urbanismo-historico-gabor-sonkoly-participa-de-encontros-na-usp/",
+      "source_object": "raw/usp_news_000037.json",
+      "source_type": "json",
+      "categoria": "Eventos",
+      "chunks": 4
+    },
+    {
+      "document_id": "usp_news_000096",
+      "titulo": "Religião e ética se unem em diferentes crenças na sociedade atual",
+      "url": "https://jornal.usp.br/radio-usp/religiao-e-etica-se-unem-em-diferentes-crencas-na-sociedade-atual/",
+      "source_object": "raw/usp_news_000096.json",
+      "source_type": "json",
+      "categoria": "Rádio USP",
+      "chunks": 2
+    },
+    {
+      "document_id": "site_a23f563fb6bc28e8",
+      "titulo": "“Revista Rasura”: educomunicação na‌ difusão científica e produção colaborativa de‌ conhecimento",
+      "url": "https://jornal.usp.br/artigos/revista-rasura-educomunicacao-na-difusao-cientifica-e-producao-colaborativa-de-conhecimento/",
+      "source_object": "raw/usp_news_000004.json",
+      "source_type": "json",
+      "categoria": "Artigos",
+      "chunks": 5
+    },
+    {
+      "document_id": "site_c1d47e69379d6c6c",
+      "titulo": "“Revista USP” questiona os tempos e os espaços da educação",
+      "url": "https://jornal.usp.br/cultura/revista-usp-questiona-os-tempos-e-os-espacos-da-educacao/",
+      "source_object": "raw/usp_news_000005.json",
+      "source_type": "json",
+      "categoria": "Cultura",
+      "chunks": 4
+    },
+    {
+      "document_id": "usp_news_000025",
+      "titulo": "São Paulo produz toneladas de lixo e recicla pouco",
+      "url": "https://jornal.usp.br/radio-usp/sao-paulo-produz-toneladas-de-lixo-e-recicla-pouco/",
+      "source_object": "raw/usp_news_000025.json",
+      "source_type": "json",
+      "categoria": "Paulo Saldiva",
+      "chunks": 1
+    },
+    {
+      "document_id": "site_a27b77cf9997e079",
+      "titulo": "“Ser Transformado” é tema de exposição interativa na Biblioteca Sinhá Junqueira",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/ser-transformado-e-tema-de-exposicao-interativa-na-biblioteca-sinha-junqueira/",
+      "source_object": "raw/usp_news_000008.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 4
+    },
+    {
+      "document_id": "usp_news_000005",
+      "titulo": "Sociobiodiversidade é chave para proteger meio ambiente e comunidade em terra indígena",
+      "url": "https://jornal.usp.br/ciencias/sociobiodiversidade-e-chave-para-proteger-meio-ambiente-e-comunidade-em-terra-indigena/",
+      "source_object": "raw/usp_news_000005.json",
+      "source_type": "json",
+      "categoria": "Ciências",
+      "chunks": 8
+    },
+    {
+      "document_id": "usp_news_000087",
+      "titulo": "Solução de controvérsias no Mercosul: imagem de sistema ineficiente é equivocada",
+      "url": "https://jornal.usp.br/ciencias/solucao-de-controversias-no-mercosul-imagem-de-sistema-ineficiente-e-equivocada/",
+      "source_object": "raw/usp_news_000087.json",
+      "source_type": "json",
+      "categoria": "Ciências",
+      "chunks": 8
+    },
+    {
+      "document_id": "usp_news_000063",
+      "titulo": "Study suggests that sexual behavior of infant capuchin monkeys may have complex functions",
+      "url": "https://jornal.usp.br/uspnews/study-suggests-that-sexual-behavior-of-infant-capuchin-monkeys-may-have-complex-functions/",
+      "source_object": "raw/usp_news_000063.json",
+      "source_type": "json",
+      "categoria": "Uspnews",
+      "chunks": 8
+    },
+    {
+      "document_id": "usp_news_000027",
+      "titulo": "Tecnologia desenvolvida na USP usa IA para identificar riscos no conteúdo digital acessado por crianças e adolescentes",
+      "url": "https://jornal.usp.br/universidade/tecnologia-desenvolvida-na-usp-usa-ia-para-identificar-riscos-no-conteudo-digital-acessado-por-criancas-e-jovens/",
+      "source_object": "raw/usp_news_000027.json",
+      "source_type": "json",
+      "categoria": "Universidade",
+      "chunks": 8
+    },
+    {
+      "document_id": "usp_news_000091",
+      "titulo": "Tornar crime o aumento abusivo do preço de combustíveis não é tão simples quanto parece",
+      "url": "https://jornal.usp.br/atualidades/tornar-crime-o-aumento-abusivo-do-preco-de-combustiveis-nao-e-tao-simples-quanto-parece/",
+      "source_object": "raw/usp_news_000091.json",
+      "source_type": "json",
+      "categoria": "Atualidades",
+      "chunks": 6
+    },
+    {
+      "document_id": "usp_news_000073",
+      "titulo": "Uma Copa entre guerras e paz",
+      "url": "https://jornal.usp.br/artigos/uma-copa-entre-guerras-e-paz/",
+      "source_object": "raw/usp_news_000073.json",
+      "source_type": "json",
+      "categoria": "Artigos",
+      "chunks": 5
+    },
+    {
+      "document_id": "site_1e735e8e3a0716ff",
+      "titulo": "Unesp recebe Colar de Honra ao Mérito Legislativo da Assembleia Legislativa de SP",
+      "url": "https://jornal.usp.br/institucional/unesp-recebe-colar-de-honra-ao-merito-legislativo-da-assembleia-legislativa-de-sp/",
+      "source_object": "raw/usp_news_000003.json",
+      "source_type": "json",
+      "categoria": "Institucional",
+      "chunks": 2
+    },
+    {
+      "document_id": "usp_news_000002",
+      "titulo": "Uso de IA em processos seletivos reitera a importância da participação humana",
+      "url": "https://jornal.usp.br/atualidades/uso-de-ia-em-processos-seletivos-reitera-a-importancia-da-participacao-humana/",
+      "source_object": "raw/usp_news_000002.json",
+      "source_type": "json",
+      "categoria": "Atualidades",
+      "chunks": 6
+    },
+    {
+      "document_id": "usp_news_000086",
+      "titulo": "USP busca voluntários para pesquisa sobre uso de redes sociais",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/usp-busca-voluntarios-para-pesquisa-sobre-uso-de-redes-sociais/",
+      "source_object": "raw/usp_news_000086.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 2
+    },
+    {
+      "document_id": "usp_news_000021",
+      "titulo": "USP é a melhor universidade da América Latina e figura entre as 120 melhores do mundo em ranking internacional",
+      "url": "https://jornal.usp.br/institucional/usp-e-a-melhor-universidade-da-america-latina-e-figura-entre-as-120-melhores-do-mundo-em-ranking-internacional/",
+      "source_object": "raw/usp_news_000021.json",
+      "source_type": "json",
+      "categoria": "Comunicados",
+      "chunks": 4
+    },
+    {
+      "document_id": "site_b1b2ed7156ff45ce",
+      "titulo": "USP e Secretaria Municipal de Saúde selecionam estudantes para o PET-Saúde Clima",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/usp-e-secretaria-municipal-de-saude-selecionam-estudantes-para-o-pet-saude-clima/",
+      "source_object": "raw/usp_news_000007.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 3
+    },
+    {
+      "document_id": "usp_news_000051",
+      "titulo": "USP quer fortalecer parceria com instituição alemã de financiamento",
+      "url": "https://jornal.usp.br/institucional/presidente-de-agencia-alema-de-intercambio/",
+      "source_object": "raw/usp_news_000051.json",
+      "source_type": "json",
+      "categoria": "Institucional",
+      "chunks": 3
+    },
+    {
+      "document_id": "usp_news_000078",
+      "titulo": "USP recebe encontro nacional sobre sustentabilidade nas universidades",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/usp-recebe-encontro-nacional-sobre-sustentabilidade-nas-universidades/",
+      "source_object": "raw/usp_news_000078.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 4
+    },
+    {
+      "document_id": "usp_news_000011",
+      "titulo": "USP Ribeirão Preto aproxima crianças e adolescentes da pesquisa científica",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/usp-ribeirao-preto-aproxima-criancas-e-adolescentes-da-pesquisa-cientifica/",
+      "source_object": "raw/usp_news_000011.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 6
+    },
+    {
+      "document_id": "usp_news_000042",
+      "titulo": "USP Ribeirão Preto promove quarta edição do Bike Tour com passeio histórico e arrecadação solidária",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/usp-ribeirao-preto-promove-quarta-edicao-do-bike-tour-com-passeio-historico-e-arrecadacao-solidaria/",
+      "source_object": "raw/usp_news_000042.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 2
+    },
+    {
+      "document_id": "site_e045da33f0cefbda",
+      "titulo": "USP sedia evento internacional sobre os avanços e desafios da educação básica no Brasil e em Angola",
+      "url": "https://jornal.usp.br/diversidade/usp-sedia-evento-internacional-sobre-os-avancos-e-desafios-da-educacao-basica-no-brasil-e-em-angola/",
+      "source_object": "raw/usp_news_000009.json",
+      "source_type": "json",
+      "categoria": "Diversidade",
+      "chunks": 3
+    },
+    {
+      "document_id": "usp_news_000003",
+      "titulo": "Vacinar adultos protege bebês e freia o avanço de doenças consideradas erradicadas",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/vacinar-adultos-protege-bebes-e-freia-o-avanco-de-doencas-consideradas-erradicadas/",
+      "source_object": "raw/usp_news_000003.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 5
+    },
+    {
+      "document_id": "usp_news_000012",
+      "titulo": "Vinte anos depois, o desafio continua no combate à violência contra mulheres e meninas",
+      "url": "https://jornal.usp.br/campus-ribeirao-preto/vinte-anos-depois-o-desafio-continua-no-combate-a-violencia-contra-mulheres-e-meninas/",
+      "source_object": "raw/usp_news_000012.json",
+      "source_type": "json",
+      "categoria": "Campus Ribeirão Preto",
+      "chunks": 6
+    },
+    {
+      "document_id": "usp_news_000067",
+      "titulo": "YouTube: como a plataforma se tornou um ator político no debate público",
+      "url": "https://jornal.usp.br/ciencias/youtube-como-a-plataforma-se-tornou-um-ator-politico-no-debate-publico/",
+      "source_object": "raw/usp_news_000067.json",
+      "source_type": "json",
+      "categoria": "Ciências",
+      "chunks": 9
+    }
+  ]
+}

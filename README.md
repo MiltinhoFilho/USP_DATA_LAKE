@@ -3,7 +3,7 @@
 Plataforma local de Engenharia de Dados e recuperação inteligente para acervos
 jornalísticos e documentais.
 
-## Visão geral
+## Visão Geral
 
 Plataforma experimental que integra Engenharia de Dados, APIs FastAPI e RAG
 conversacional totalmente local. A implementação atual valida o fluxo completo
@@ -27,7 +27,8 @@ publicado pelo Jornal da USP e pode ser ampliado futuramente.
 ```text
 Jornal da USP
   → Generator API
-  → MinIO / Bronze
+  → Bronze local
+  → MinIO / Bronze (opcional, com upload_minio=true)
   → Pipeline API
   → Silver: limpeza, Markdown e chunks
   → Gold: PostgreSQL + Qdrant
@@ -44,6 +45,22 @@ Jornal da USP
   com overlap de 200.
 - **Gold:** texto/metadados no PostgreSQL e embeddings BGE-M3 no Qdrant, ligados
   por `postgres_id`.
+
+## Fluxo
+
+```text
+Jornal da USP
+  → Generator API
+  → Bronze local
+  → MinIO / Bronze (opcional, com upload_minio=true)
+  → Pipeline API
+  → Silver / transformação e chunks
+  → PostgreSQL + Qdrant / Gold
+  → Retriever híbrido
+  → Evidence Check
+  → Ollama local
+  → resposta com fontes e métricas
+```
 
 ## Serviços e portas
 
@@ -63,6 +80,11 @@ Jornal da USP
 - Pipeline: `GET /health`, `POST /processar-site`, `POST /processar-pdf`;
   `/site` e `/pdf` são aliases legados.
 - RAG: `GET /`, `GET /health`, `POST /pergunta`.
+
+Na Pipeline, `load_postgres=false` com `load_qdrant=true` é aceito pelo contrato,
+mas normalmente não é operacionalmente válido: o upsert no Qdrant exige o
+`postgres_id` produzido pela carga PostgreSQL. Para a carga Gold completa, mantenha
+`load_postgres=true` quando `load_qdrant=true`.
 
 Swagger: [Generator](http://localhost:8001/docs),
 [Pipeline](http://localhost:8002/docs) e [RAG](http://localhost:8003/docs).
@@ -106,7 +128,7 @@ Antes de subir o Pipeline, ajuste `HF_CACHE_HOST` no `.env` para um cache local
 completo do `BAAI/bge-m3`. O Compose monta esse diretório como somente leitura no
 container; os pesos não devem ser copiados para o repositório.
 
-## Subir e parar
+## Como executar
 
 ```powershell
 docker compose -f docker-compose.yml up -d --build
@@ -138,14 +160,33 @@ Payload seguro do pipeline para uma amostra existente:
 {"source":"minio","limit":1,"load_postgres":false,"load_qdrant":false}
 ```
 
+## Como reproduzir
+
+No Windows PowerShell, crie o ambiente, instale as dependências e prepare a
+configuração local conforme a seção de instalação. Ajuste `HF_CACHE_HOST` para o
+cache local do `BAAI/bge-m3` e confirme que o modelo `gemma3:4b` está disponível
+no Ollama. Em seguida, execute:
+
+```powershell
+docker compose -f docker-compose.yml up -d --build
+docker compose -f docker-compose.yml ps
+Invoke-RestMethod http://localhost:8001/health
+Invoke-RestMethod http://localhost:8002/health
+Invoke-RestMethod http://localhost:8003/health
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+```
+
 ## Testes
 
 ```powershell
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-A validação atual executa 55 testes unitários e de contrato. Importação, OpenAPI
-e health checks não carregam embeddings nem acessam serviços externos.
+A suíte atual contém 64 testes automatizados, unitários e de contrato. Importação
+e geração do OpenAPI não inicializam o Retriever. O endpoint `/health` apenas
+retorna o status e não consulta as dependências; contudo, no startup da RAG API,
+o lifespan inicializa o Retriever, carregando o BGE-M3, o índice BM25 e o cliente
+Qdrant antes de a aplicação atender requisições.
 
 ## Segurança e limitações
 
@@ -186,11 +227,12 @@ incluído no diagnóstico.
 
 ## Validação conversacional observada
 
-Três chamadas reais foram executadas no ambiente local com BGE-M3 e
-`gemma3:4b`: uma notícia JSON respondeu em 144,17 s; o PDF respondeu em 47,69 s;
-e uma pergunta externa foi recusada em 19,20 s sem chamar o Ollama. Esses tempos
-são observações do hardware de desenvolvimento, não metas ou garantias de
-desempenho. Consulte o roteiro de demonstração para as perguntas utilizadas.
+O artefato `data/rag_demo_report.json` registra oito chamadas locais com BGE-M3
+e `gemma3:4b`, todas aprovadas pelos critérios do roteiro. Nesse registro, as
+chamadas positivas levaram entre 54,952 s e 151,093 s no cliente, enquanto as
+recusas externas levaram entre 0,867 s e 23,667 s sem chamar o Ollama. Esses
+tempos são observações do hardware de desenvolvimento, não metas ou garantias
+de desempenho.
 
 ## Inventário validado
 
@@ -212,3 +254,8 @@ avaliadas futuramente; não fazem parte da implementação atual.
 Consulte [Arquitetura](docs/ARQUITETURA.md), [API](docs/API.md) e
 [Demonstração](docs/DEMONSTRACAO.md). Para falhas operacionais, consulte
 [Troubleshooting](docs/TROUBLESHOOTING.md).
+
+## Documentação Técnica
+
+O relatório técnico completo está disponível em
+[docs/relatorio_tecnico.pdf](docs/relatorio_tecnico.pdf).

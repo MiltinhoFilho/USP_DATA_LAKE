@@ -24,6 +24,11 @@ Payload:
 `source` aceita `minio` ou `local`; `limit` deve ser nulo ou inteiro ≥1. Cargas Gold
 são idempotentes por documento/chunk. Aliases `/site` e `/pdf` estão depreciados.
 
+O contrato aceita `load_postgres=false` e `load_qdrant=true`, mas essa combinação
+normalmente não é válida operacionalmente. `upsert_embeddings` exige `postgres_id`
+ou `id`, identidade obtida pela carga PostgreSQL. Para persistir vetores gerados
+pela Pipeline, utilize `load_postgres=true` junto de `load_qdrant=true`.
+
 ## RAG API — porta 8003
 
 - `GET /`
@@ -71,6 +76,11 @@ a rastreabilidade sem quebrar clientes anteriores. `source_type` é derivado com
 Pergunta curta ou `top_k` fora de 1–20 retorna 422. Indisponibilidade do Ollama
 retorna 503; ausência de evidência retorna HTTP 200 com recusa segura e sem
 chamada ao modelo.
+
+`GET /health` apenas retorna o status da API e não consulta Retriever, PostgreSQL,
+Qdrant ou Ollama. Isso não elimina a inicialização de startup: durante o lifespan
+da RAG API, o Retriever é criado e inicializado, carregando o BGE-M3, o índice
+BM25 e o cliente Qdrant antes de a aplicação começar a atender requisições.
 
 ### Logging interno
 

@@ -1,0 +1,27 @@
+{
+  "benchmark_version": "0.1.0",
+  "corpus_scope": "Recorte local indexado do Jornal da USP",
+  "review_status": "pending",
+  "questions": [
+    {"id": "json-001", "categoria": "json", "pergunta": "O que caracteriza uma cultura de inovação segundo a notícia?", "answerable": true},
+    {"id": "json-002", "categoria": "json", "pergunta": "Quais efeitos a ampliação do Bolsa Família teve sobre hospitalizações, mortalidade e empregabilidade?", "answerable": true},
+    {"id": "json-003", "categoria": "json", "pergunta": "Como o GeoReDUS facilita o acesso aos dados urbanos do CEM?", "answerable": true},
+    {"id": "json-004", "categoria": "json", "pergunta": "Quais mecanismos do canabidiol podem auxiliar na recuperação da fadiga muscular?", "answerable": true},
+    {"id": "json-005", "categoria": "json", "pergunta": "Qual é o objetivo do e-book A arte de comer sem glúten?", "answerable": true},
+    {"id": "json-006", "categoria": "json", "pergunta": "Por que a participação humana continua importante em processos seletivos que usam inteligência artificial?", "answerable": true},
+    {"id": "json-007", "categoria": "json", "pergunta": "Quais riscos da gamificação para crianças e adolescentes são destacados na notícia?", "answerable": true},
+    {"id": "json-008", "categoria": "json", "pergunta": "Quais três fatores são apontados como fundamentais para avançar na alfabetização na idade certa?", "answerable": true},
+    {"id": "json-009", "categoria": "json", "pergunta": "Quais tratamentos combinados causaram os danos mais graves aos cabelos no estudo?", "answerable": true},
+    {"id": "json-010", "categoria": "json", "pergunta": "Qual disponibilidade semanal é exigida dos estudantes selecionados para o PET-Saúde Clima?", "answerable": true},
+    {"id": "pdf-001", "categoria": "pdf", "pergunta": "Qual serviço oferece a Jornada SOFt 2026?", "answerable": true},
+    {"id": "pdf-002", "categoria": "pdf", "pergunta": "Quando ocorre a Jornada SOFt 2026 e qual é o formato do curso?", "answerable": true},
+    {"id": "pdf-003", "categoria": "pdf", "pergunta": "Quais são os quatro módulos do curso de organização financeira?", "answerable": true},
+    {"id": "pdf-004", "categoria": "pdf", "pergunta": "Quais são os três pilares da metodologia SOFt?", "answerable": true},
+    {"id": "negative-001", "categoria": "fora_do_corpus", "pergunta": "Qual foi o resultado do campeonato intergaláctico de xadrez quântico da USP?", "answerable": false},
+    {"id": "negative-002", "categoria": "fora_do_corpus", "pergunta": "Quando a USP demonstrou o primeiro teletransporte humano para a Lua?", "answerable": false},
+    {"id": "negative-003", "categoria": "fora_do_corpus", "pergunta": "Onde foi encontrado o dinossauro lunar estudado pela USP?", "answerable": false},
+    {"id": "negative-004", "categoria": "fora_do_corpus", "pergunta": "Quem recebeu o Nobel de Física de 2040 por uma pesquisa da USP?", "answerable": false},
+    {"id": "negative-005", "categoria": "fora_do_corpus", "pergunta": "Como funciona a base submarina da USP na lua Europa de Júpiter?", "answerable": false},
+    {"id": "negative-006", "categoria": "fora_do_corpus", "pergunta": "Qual energia produz a usina de antimatéria da USP em Saturno?", "answerable": false}
+  ]
+}
