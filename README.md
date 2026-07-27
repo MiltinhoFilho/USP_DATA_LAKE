@@ -1,11 +1,10 @@
 # Intelligent News RAG Platform
 
-Plataforma local de Engenharia de Dados e recuperação inteligente para acervos
-jornalísticos e documentais.
+Plataforma de Engenharia de Dados e Recuperação Aumentada por Geração (RAG) desenvolvida para construir um Data Lake em arquitetura Medalhão (Bronze, Silver e Gold), utilizando notícias do Jornal da USP como base para recuperação inteligente de informações.
 
 ## Visão Geral
 
-Plataforma experimental que integra Engenharia de Dados, APIs FastAPI e RAG
+Plataforma que integra Engenharia de Dados, APIs FastAPI e RAG
 conversacional totalmente local. A implementação atual valida o fluxo completo
 com um recorte do Jornal da USP, sem representar a cobertura integral do portal.
 
@@ -22,20 +21,52 @@ publicado pelo Jornal da USP e pode ser ampliado futuramente.
 > As respostas são baseadas em um recorte de notícias do Jornal da USP atualmente
 > indexado no Data Lake e podem não representar todo o conteúdo publicado no site.
 
+## Principais funcionalidades
+
+- Coleta automatizada de notícias do recorte fa página do site: Jornal da USP.
+- Pipeline ETL baseado na Arquitetura Medalhão (Bronze, Silver e Gold).
+- Armazenamento da camada Bronze utilizando MinIO.
+- Processamento e geração de chunks na camada Silver.
+- Persistência textual no PostgreSQL.
+- Indexação vetorial utilizando Qdrant e BGE-M3.
+- Recuperação híbrida (Busca Vetorial + BM25 + Reciprocal Rank Fusion).
+- Validação automática de evidências (Evidence Check).
+- Geração local de respostas utilizando Ollama (Gemma 3 4B).
+- Respostas fundamentadas com exibição das fontes recuperadas.
+
 ## Arquitetura
 
-```text
-Jornal da USP
-  → Generator API
-  → Bronze local
-  → MinIO / Bronze (opcional, com upload_minio=true)
-  → Pipeline API
-  → Silver: limpeza, Markdown e chunks
-  → Gold: PostgreSQL + Qdrant
-  → Retriever: BGE-M3 + BM25 + RRF
-  → avaliação de evidências
-  → Ollama local / gemma3:4b
-  → RAG API / resposta com fontes
+usp-data-lake-main/
+│
+├── api/
+│   ├── rag_api.py
+│   ├── retriever.py
+│   ├── llm.py
+│   ├── evidence.py
+│   └── ...
+│
+├── frontend/
+│   ├── index.html
+│   ├── css/
+│   ├── js/
+│   └── assets/
+│
+├── src/
+│   ├── scraper.py
+│   ├── transform.py
+│   ├── postgres_loader.py
+│   ├── qdrant_loader.py
+│   └── README.md
+│
+├── data/
+│
+├── docker-compose.yml
+├── Dockerfile
+├── requirements.txt
+├── README.md
+├── .gitignore
+└── .env.example
+
 ```
 
 ### Arquitetura Medalhão
@@ -61,6 +92,41 @@ Jornal da USP
   → Ollama local
   → resposta com fontes e métricas
 ```
+usp-data-lake-main/
+├── .devcontainer/
+├── docker/
+├── docs/
+│   └── images/
+├── evaluation/
+├── frontend/
+│   ├── assets/
+│   ├── app.js
+│   ├── index.html
+│   ├── styles.css
+│   └── README.md
+├── generator-api/
+├── pipeline-api/
+├── scripts/
+├── src/
+│   ├── api/
+│   ├── retriever.py
+│   ├── llm_service.py
+│   ├── scraper.py
+│   ├── transform.py
+│   └── demais módulos
+├── tests/
+├── data/
+│   └── README.md
+├── .dockerignore
+├── .env.example
+├── .gitignore
+├── docker-compose.yml
+├── Dockerfile
+├── Dockerfile-api
+├── LICENSE
+├── README.md
+├── requirements.txt
+└── requirements-api.txt
 
 ## Serviços e portas
 
