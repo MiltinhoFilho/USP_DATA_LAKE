@@ -1,0 +1,162 @@
+{
+  "generated_at": "2026-07-24T16:54:19.527605-03:00",
+  "scope": "Sprint 2.8.2 ? valida??o humana dos JSONs refinados exclusivamente em staging",
+  "human_status": "PENDENTE ? AGUARDANDO MILTON",
+  "overall_status": "PASSOU",
+  "validation_note": "Autolinks Markdown no formato <https://...> s?o permitidos e n?o s?o classificados como HTML bruto.",
+  "overall_checks": {
+    "six_markdown_files_generated": true,
+    "only_expected_markdown_files_in_review": true,
+    "all_utf8_valid": true,
+    "no_empty_files": true,
+    "complete_content_visible": true,
+    "starts_preserved": true,
+    "ends_preserved": true,
+    "last_journalistic_paragraphs_preserved": true,
+    "replacement_character_absent": true,
+    "raw_html_absent_from_main_bodies": true,
+    "metadata_preserved": true,
+    "rules_documented": true,
+    "human_report_generated": true
+  },
+  "documents": [
+    {
+      "document_id": "usp_news_000001",
+      "path": "data/sprint_2_8_staging/review/usp_news_000001.md",
+      "bytes": 7779,
+      "sha256": "83ef324d5dc28ef79e79656e779fe2c28d3cb8c2ea3e4c95a69e5ef3e9daf823",
+      "checks": {
+        "file_exists": true,
+        "utf8_valid": true,
+        "nonempty": true,
+        "title_present": true,
+        "first_paragraph_present": true,
+        "last_journalistic_paragraph_present": true,
+        "replacement_character_absent": true,
+        "raw_html_absent_from_main_body": true,
+        "metadata_preserved": true,
+        "complete_refined_text_present": true,
+        "human_status_pending": true
+      },
+      "raw_html_matches": [],
+      "status": "PASSOU"
+    },
+    {
+      "document_id": "usp_news_000017",
+      "path": "data/sprint_2_8_staging/review/usp_news_000017.md",
+      "bytes": 4750,
+      "sha256": "c7f760f72f3d40b9d59fc36be6f93938df2116ce6aa4b0514471f6299d169839",
+      "checks": {
+        "file_exists": true,
+        "utf8_valid": true,
+        "nonempty": true,
+        "title_present": true,
+        "first_paragraph_present": true,
+        "last_journalistic_paragraph_present": true,
+        "replacement_character_absent": true,
+        "raw_html_absent_from_main_body": true,
+        "metadata_preserved": true,
+        "complete_refined_text_present": true,
+        "human_status_pending": true
+      },
+      "raw_html_matches": [],
+      "status": "PASSOU"
+    },
+    {
+      "document_id": "usp_news_000053",
+      "path": "data/sprint_2_8_staging/review/usp_news_000053.md",
+      "bytes": 15901,
+      "sha256": "c493348438ce52ebffd4f9a9988557deaebd6e40b3a328182563c42a7103026e",
+      "checks": {
+        "file_exists": true,
+        "utf8_valid": true,
+        "nonempty": true,
+        "title_present": true,
+        "first_paragraph_present": true,
+        "last_journalistic_paragraph_present": true,
+        "replacement_character_absent": true,
+        "raw_html_absent_from_main_body": true,
+        "metadata_preserved": true,
+        "complete_refined_text_present": true,
+        "human_status_pending": true
+      },
+      "raw_html_matches": [],
+      "status": "PASSOU"
+    },
+    {
+      "document_id": "usp_news_000065",
+      "path": "data/sprint_2_8_staging/review/usp_news_000065.md",
+      "bytes": 8812,
+      "sha256": "07f5d8ee33297363308900c0f26333a092d6bc3e4e0fbde5307103b440b18d94",
+      "checks": {
+        "file_exists": true,
+        "utf8_valid": true,
+        "nonempty": true,
+        "title_present": true,
+        "first_paragraph_present": true,
+        "last_journalistic_paragraph_present": true,
+        "replacement_character_absent": true,
+        "raw_html_absent_from_main_body": true,
+        "metadata_preserved": true,
+        "complete_refined_text_present": true,
+        "human_status_pending": true
+      },
+      "raw_html_matches": [],
+      "status": "PASSOU"
+    },
+    {
+      "document_id": "usp_news_000071",
+      "path": "data/sprint_2_8_staging/review/usp_news_000071.md",
+      "bytes": 35100,
+      "sha256": "b441005e9d9e457feecc8d538e3d7b251f116b3a8342766228caf6f56d4fea76",
+      "checks": {
+        "file_exists": true,
+        "utf8_valid": true,
+        "nonempty": true,
+        "title_present": true,
+        "first_paragraph_present": true,
+        "last_journalistic_paragraph_present": true,
+        "replacement_character_absent": true,
+        "raw_html_absent_from_main_body": true,
+        "metadata_preserved": true,
+        "complete_refined_text_present": true,
+        "human_status_pending": true
+      },
+      "raw_html_matches": [],
+      "status": "PASSOU"
+    },
+    {
+      "document_id": "usp_news_000100",
+      "path": "data/sprint_2_8_staging/review/usp_news_000100.md",
+      "bytes": 4755,
+      "sha256": "92ee5ba9ee9b796b5d67ca25878fc43157a3251c3495a8118c7d2540d1776a3e",
+      "checks": {
+        "file_exists": true,
+        "utf8_valid": true,
+        "nonempty": true,
+        "title_present": true,
+        "first_paragraph_present": true,
+        "last_journalistic_paragraph_present": true,
+        "replacement_character_absent": true,
+        "raw_html_absent_from_main_body": true,
+        "metadata_preserved": true,
+        "complete_refined_text_present": true,
+        "human_status_pending": true
+      },
+      "raw_html_matches": [],
+      "status": "PASSOU"
+    }
+  ],
+  "operational_attestations": {
+    "official_bronze_files_modified": false,
+    "staging_pdfs_generated": false,
+    "silver_executed_or_modified": false,
+    "golden_accessed_or_modified": false,
+    "postgresql_accessed": false,
+    "qdrant_accessed": false,
+    "retriever_executed": false,
+    "ollama_executed": false,
+    "scraper_executed": false,
+    "acl_modified": false
+  }
+}

@@ -10,6 +10,7 @@ import time
 from typing import Any
 
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.middleware.cors import CORSMiddleware 
 from pydantic import BaseModel, Field
 
 from src.llm_service import (
@@ -43,10 +44,12 @@ async def lifespan(app: FastAPI):
                 retriever.initialize()
                 app.state.retriever = retriever
                 app.state.retriever_error = None
-            except Exception:
+
+            except Exception as error:
                 app.state.retriever = None
                 app.state.retriever_error = "retriever_unavailable"
-                logger.error("Falha controlada ao inicializar o Retriever")
+                logger.exception("Falha ao inicializar o Retriever: %s",error)
+
     try:
         yield
     finally:
@@ -64,6 +67,17 @@ app = FastAPI(
     description="API para realizar buscas semânticas nos dados do Data Lake.",
     version="1.0.0",
     lifespan=lifespan,
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:8080",
+        "http://127.0.0.1:8080",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
@@ -205,7 +219,7 @@ def _log_evidence_diagnostics(evidence: Any) -> None:
             "decision": evidence.decision,
             "reason": evidence.refusal_reason,
         }
-        logger.debug(
+        logger.info(
             "rag_evidence_candidate %s",
             json.dumps(details, ensure_ascii=True, sort_keys=True),
         )

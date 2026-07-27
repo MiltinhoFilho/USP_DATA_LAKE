@@ -1,0 +1,1012 @@
+﻿{
+    "generated_at":  "2026-07-24T13:06:27.1061297-03:00",
+    "correction_exit_code":  5,
+    "pdf_count":  100,
+    "json_count":  100,
+    "pdf":  {
+                "usp_news_000001":  "ed7b46df9e97c8b10c6ef42aa424e5289e5e59a91a5ac70b5891f59c0b02b9f8",
+                "usp_news_000002":  "ec352e99066d0bfbc5bf9750c45a2f0e1f351b8fae238a858c31769d315160d1",
+                "usp_news_000003":  "81d7a701c5489e0b0eb52bca83578b292514cf747834e3f1694e16dd5eb55df0",
+                "usp_news_000004":  "b77adab5f1b93ff55f161de2b9e2f9cc20047e1274e55579342a2d5e7c3202bc",
+                "usp_news_000005":  "dcbe66e22406f6f362fbe8da5d222e3f1ee8109abb963f6bb11e1efb238fb0b1",
+                "usp_news_000006":  "4da18473fafde28f38862d3e764a30100d115c5864ae9e59cbe0124c991849c2",
+                "usp_news_000007":  "9f82a06e0ea130feef68cdbf14a51127f16b4a390443bade7a62ff22d68c3252",
+                "usp_news_000008":  "862516e1245c8d3382b97e2c46b9e5285bc8ed9503de2816630aba566af7ebf5",
+                "usp_news_000009":  "c55a05c8502d31302b76b4c4a83a812fb24090affac90903c4fcd59038c6eeff",
+                "usp_news_000010":  "edfc32ac33fd4b97f6d8e25e6212b6dec7a40a209ab9c18ec5bd54c664787c98",
+                "usp_news_000011":  "aba54c182441a6916748653e4692a8ac9290c7e6e302fb998de806e70b2d0fa6",
+                "usp_news_000012":  "3a2650786becea6c9b74179f3b8a1551c6a2de1ea5f476b921c337f9d1402104",
+                "usp_news_000013":  "7c13388a2ff789b7e79312a2514cb83bc1a2a4965f76a380119e3ee43c9e54f3",
+                "usp_news_000014":  "b7cbb5b40744d35d050317b1ca651ccf20558fe0640d3c6eb493eb6b77a927c1",
+                "usp_news_000015":  "950d696b9fc0e3114b5a0945bbb1d7cbd0b3b6fccc3e9e09581ad4803c0d48cf",
+                "usp_news_000016":  "1f4e6eed6ab0553bfdf4b51b57b7485ba23e54164a874c8807eea7c5ec2ffdac",
+                "usp_news_000017":  "39874b81a0079eb264585f1fabca6ffa9d788f3f47c63d465af9b3c1954fc49d",
+                "usp_news_000018":  "ea0b2f70cb06406db324ffbf268d75b275596d2bc414149068f994e02aead3e4",
+                "usp_news_000019":  "a24244bed2d58ff618f0808a1f7dc1aa6c0569b243db1334781fa662847da388",
+                "usp_news_000020":  "499244a784689e293220ba0cad021017ff7d1199df0a488e7c5e4705573e6f42",
+                "usp_news_000021":  "c1d7d96da93434f0a85cf98002580974a3edc4996d5225d0aa41cef250dcb73a",
+                "usp_news_000022":  "de621a19f4f43d81ea0ea8ab583962869a5009246a2adbc6dc5c387e05e2eccb",
+                "usp_news_000023":  "50656a559be81e32d6aea774aab4802199062c956a2551c8c9ac19f504e1f42d",
+                "usp_news_000024":  "7c75dc3fbd83ba9e31dd936cf25d4801d4842e5459931cc20fdba7956b7c158d",
+                "usp_news_000025":  "ea41cf99b042ec7485ca003e21d0c1155f75fe7d284b852ea7fcca2d41ee17c7",
+                "usp_news_000026":  "976eedf300977a81f4c1c7f770fe1b9de044e2a70dc33e547073353f865d3222",
+                "usp_news_000027":  "640026ba677734fcb7f7a01c5a36386b125e0ed617af73c5c338638e65c0775d",
+                "usp_news_000028":  "a51533b219dc99d2ed9592191f4fa10f1731c1a0fc2fcf42341f961275dd20b8",
+                "usp_news_000029":  "57c0b292416582884f34517b87bfa41c9b81b53ce4c5b26ea2cecd59a1a09e94",
+                "usp_news_000030":  "be59b187aa056aaf96ebb9e5cb4164fe12920e24c8f21a1949a4dc9c711a7a67",
+                "usp_news_000031":  "501bf2446046af7f7c68a93ba011ac5b471b7d489e716bba6f3f870c9f0a37e2",
+                "usp_news_000032":  "dcecc77eed8030465539c2eb25212706e7a98872e41cd569cdb3b16328061db9",
+                "usp_news_000033":  "c7363fca93a4612ea6edfdf05e005e925ae2fb749d0679fc3715a518fe11f5ad",
+                "usp_news_000034":  "3584286c0c890c29a929d7009d0a7fc47cdd1a871b733b14ee1c0b38b3a32537",
+                "usp_news_000035":  "f78336689868d087a30cd922a98ffe138a4dcd9f1836d7cb6083298c7f10137f",
+                "usp_news_000036":  "330a8f2d421b21db1c78eb690661c44157ae67922a7cf1a5a2f927d4af626877",
+                "usp_news_000037":  "cb711a48dc84a99cd0dd148d2091079d8d85612873dc8de27332690a649ac2c8",
+                "usp_news_000038":  "f0c9f8b59351ecd35b6be6fd6695d2906268fb5c6c29a5937043a3e29cfd929a",
+                "usp_news_000039":  "44ba41da019b90a4985ea8acee9fd8f33fe7b5c40412fb6c514050c1e0c164af",
+                "usp_news_000040":  "e5c1a5fc50a647a72a56f798ebe8aed2db2f94306ac17b2132235c3b5aea156e",
+                "usp_news_000041":  "5b0ce0e76dee683633be4dc52c924911692bf2f0ce053e9147cb1489c497ff27",
+                "usp_news_000042":  "b2f125b18a4ea44036f3fd24b12952ad3e84575774bac46250a9b010e2c6a19d",
+                "usp_news_000043":  "25cd00db7656747afb4b570d88389febefee417637b8a315534ad565c29010e6",
+                "usp_news_000044":  "6a0d5ba71779c93818caf5b8d31b0a6a0c0100488b260b88416979f75546f216",
+                "usp_news_000045":  "a41b6bc7fe5d21686f0428bc469016385a4f12977615e163351be3b744b1c625",
+                "usp_news_000046":  "35c5580399cd549259dc5d104487da2ea3c0d213088cf1f284202c1853e10798",
+                "usp_news_000047":  "bedfece6fa4df206f9425e5b8dd379fca44a0b7f40768bc2341f659c88f005bf",
+                "usp_news_000048":  "b6565b18558f55b534e05316d5a1b3c05900284a78487b7bd6d29dc30540d67e",
+                "usp_news_000049":  "8a12f822f090decf31cb5a5f6ae9642917932c633e1c577e5d7ced8dbffc04ee",
+                "usp_news_000050":  "937913f483a9a2e674efabbca112f87154657d25c08e196cc0a45179c0d18075",
+                "usp_news_000051":  "defd9b555201824f5535e3a15234010bcb30a824330edc90759510f78cf5a856",
+                "usp_news_000052":  "b76de4aebb7b0535a2ffee6e98cf5374230b1e56cdd08c71035f29bb7eb4972c",
+                "usp_news_000053":  "9b8cd30269c8ad4ffd69b6198efc9c93fdf912d70a85169ec1e63b0e86d914ba",
+                "usp_news_000054":  "da63ede8be7900459e1222eef385e669f65935160a58405dc8a6d19190cc3d55",
+                "usp_news_000055":  "f8b411ea3e493cfca8332b97ef36e339d5e5924b51cff304c296e52859877fdb",
+                "usp_news_000056":  "aff67a6d00bca20d3ec4ac71dd47745a3d6416ba72d8d114ab5235834e33cdf4",
+                "usp_news_000057":  "0ff9556dd3809162ff94c204ae9d7dda942e2158efacf876b9bfdac714b71af5",
+                "usp_news_000058":  "ab03a82fcee3dd40295ab7ac29f40a8c470ec117b0ed8a4ac6399bd2e143e233",
+                "usp_news_000059":  "21a94103471a6467e27f054fe6e365ff1db445b1b474322dbf67160e3b6931c2",
+                "usp_news_000060":  "397c73164c08a474357060780e162b5e4c93a6449c8440f6b28adf143c0d1987",
+                "usp_news_000061":  "bd29bb9749d333af303b18596bbd14ca3a46e2b1f04af39bdd8444720110eb0f",
+                "usp_news_000062":  "54307f2bb19a5dc7d879988c89a065f1d04190059b913960149becff7f7312b5",
+                "usp_news_000063":  "9ad459150d15c35364c6b30327d52626a0656077189046734532a5d0f09117ab",
+                "usp_news_000064":  "a152603f2fd7622ddb8876b003915543c06d41ab36ec95f4565574b460767fe7",
+                "usp_news_000065":  "9fbb1da9763272059aa373c6bd73aa865a36aad9385c88ab0c33836a3e48a879",
+                "usp_news_000066":  "ec3f7c5289d403b2c8fb7a0813831aa74ddbb7531009f41fe4a260c698d7763d",
+                "usp_news_000067":  "d9efce61860b928651d94db7a088a3eebe1cf9037c36c19c3402a4ec435a3044",
+                "usp_news_000068":  "68f283e9612a8f029d7520174b79681b9373998b9058d280c3166820f04055b2",
+                "usp_news_000069":  "aa0a7052ad879164453c091a64351a69f7dc5915d63668ce2c3e69b3d2c259f5",
+                "usp_news_000070":  "3efb7be6ca3643d89233c79573c89206bdc0f0c3499b2451aabbf8093306d82e",
+                "usp_news_000071":  "166c0ee504c64a1ce28daa14475135b17f0efb4cc1064a26624b1cb292771bae",
+                "usp_news_000072":  "96e44c7e79dfc5fcec3ae89301cf7fc605457ae21878a4d6ce491ccec7de1c3b",
+                "usp_news_000073":  "2b757dc03f2f194e456b2eaf02636e4ef2d762cdb15a4dd9f913b7964cb7c6dc",
+                "usp_news_000074":  "6763477714732c35e499a66a0090b41c627bf50e2a2cf743cde44e914d49d44b",
+                "usp_news_000075":  "4de396ddaac0c0b61c3a87e30a990c28c61a68ac0f55518270ba60fbabfd632e",
+                "usp_news_000076":  "e050dc9678a1527597ca631b1dcb85e52e8233e0915ac45f12b02c0692b14151",
+                "usp_news_000077":  "0585a757f59d6d433b274eb1cecc6600e350aeee1d0fb0229b2cfde2f5607bf0",
+                "usp_news_000078":  "5b4ff9ee9e348e9d0f09cb01125a8e6b5c94c53aee691e09da2373ddcb50da80",
+                "usp_news_000079":  "c7a79a4731dfed9f25e68b094174a24ec4fd1630cd35e35f152da3a766441f01",
+                "usp_news_000080":  "d9d0e190f7e8332a563b64f63393cf90e81afe6e3d8640fce5eaf539ec0cf158",
+                "usp_news_000081":  "f81ae43a64a3ac54078079a5512c038936e821b1b08abe486b95020fa01319d4",
+                "usp_news_000082":  "18be51066b7b2b8a2b6e0a3e01e8e18b66111d9d1cf691aa8f9206688358faca",
+                "usp_news_000083":  "40c1a2c2abc305e2f8c04962ad20aa921e22dc09e2bdfb911318ebd9ab4e3a1d",
+                "usp_news_000084":  "de0032ee99f181e1b563cc6342d0ec768f576f5eed0b4470969427e8b26318d7",
+                "usp_news_000085":  "b28a6ffd9b51aa097274d318ad06571bfa6a6edbd2da8d8a644e75912edd82ec",
+                "usp_news_000086":  "82590a6170c7146ff9f4823020cae69a2bc777bd8dc61016a08160411ef40e44",
+                "usp_news_000087":  "8f76f71c929eab02d1c679baff1dea422e0e97197dbe27cb6236ce204d576771",
+                "usp_news_000088":  "5b54f77c31bacea06ff0d1016ee92c52eb60aac56dda58f7ba1f08a18536734b",
+                "usp_news_000089":  "a88fcb248be0c01f39f08364ced45c6d403dd720b3479d0a4983db5b24fa7e57",
+                "usp_news_000090":  "3f7e96bc7d47fcb724ae9f2c95079c3c0a75d398451ef743dfa3d6fcf362e7c6",
+                "usp_news_000091":  "e09fcb52b4a5fa7c575226c6585d1d92094799cb21770d2a93885127f2e98a8f",
+                "usp_news_000092":  "982b35f194295db8f30644bf2c8a0a3737d76acffef1a25a3197cf0627741732",
+                "usp_news_000093":  "a535f14d2b4c89bf8ee13e06e25db42884eb49a24ad8a572220b5079473e5285",
+                "usp_news_000094":  "0dca05a8a57cde08fe9ad92501934cf3de209996ad9ee03db995e52081bfcda8",
+                "usp_news_000095":  "f8cc7637542a4b0c509aeac7affe54388d70d4738baec0d562487edd85faba24",
+                "usp_news_000096":  "4d4a78f3e27caf3aa6b40c62ee19ad69f42ce529f584401c1bbe1bca1bfee81d",
+                "usp_news_000097":  "de8cbed8c3d57fa63ecf0f92570204b17fd34dcf74a080d344d8a61109a56714",
+                "usp_news_000098":  "d6f10ddc61e3881c4b07eea3f7ab07b8207de2bd6c46347b9e1786420bc81b00",
+                "usp_news_000099":  "1d0a573d216a8194649f075461df1383c9439141dad0587e108191ebe2ecb943",
+                "usp_news_000100":  "672b3e8970afc3940e8fbfb3a7bcc49285193c433a0d4d376622f3a391d41a63"
+            },
+    "json":  {
+                 "usp_news_000001":  "276011ec18a87d484f95de7e7c5510ac539e8b5921f48c5bfeabe47bed9c7433",
+                 "usp_news_000002":  "0146b867088f1fbb04900250537babb7af205278033e29a53f9d8048faf92ce7",
+                 "usp_news_000003":  "fc1ea1674c3686c7c0b9851b656da119e30be64f29ee78587ca6709b358dc1bb",
+                 "usp_news_000004":  "1cc25f2dad9ae11874a77f2dbf89359245e570a9d811197531e9f1655f12c431",
+                 "usp_news_000005":  "9661abd7777e76ba4f534d96b5f39d6095bf3ed4b2a2ae134b48df339a5c3f21",
+                 "usp_news_000006":  "69871f5492682764ad00bfb7d5e87e8d4fd508fb16b8fa000b09d31153996a8f",
+                 "usp_news_000007":  "b652838c84f8b8f9edb85e7334f843abc76d0356bab561f05ad085715c4b6b50",
+                 "usp_news_000008":  "1fe991382f4d85ed166a4feae97127e81615be923e373fc88c293515aa7be20d",
+                 "usp_news_000009":  "a747b423528984f92d3ca5ad8ebfbf6145bb5ad0c20bb10c6c61895917396a12",
+                 "usp_news_000010":  "60e1affb6c69726ea87c678b467d05627c60ae3f671d134343d548567ef014e9",
+                 "usp_news_000011":  "24026ad3bb9f9c69243356bd6c5bfba7b9c8a325268da8cd30cd461d54391adf",
+                 "usp_news_000012":  "2c0ede8d2af8f03a58804e48d0f75544735fe2cead727e4c954881f0b201d43b",
+                 "usp_news_000013":  "2d6e1517b6e29bfe89ca93abeed8aeabcf368dbdfaf767bcfd047350f9055dd1",
+                 "usp_news_000014":  "92ed495ed4ac970d401c253010aa06e6f8ed74b60769011072ae1d13844698a2",
+                 "usp_news_000015":  "02851664704d034fbd48a463e4020399084e68143efdc47da6c0d096be5edf9f",
+                 "usp_news_000016":  "2d1f11b9e5c9a6bc8ad06eb48faf1df66e1fc7743eb45bb230a91b8d8e719ed2",
+                 "usp_news_000017":  "2d2a66e2290a2665ce745fb99c31e3361b3f3f538d33686b418aabdb0b544367",
+                 "usp_news_000018":  "f522e9d16fdeee3b04634757ab76a446e4782652f9ac2f933bafaa9f3872cb53",
+                 "usp_news_000019":  "423b72eb847258fc67c3b7831202d21a2804225b14d3bd0157118387260f151d",
+                 "usp_news_000020":  "65d870c4eaf017e59f45455afc9923e3ee769a456dcbfc00bf75b9106d0899a1",
+                 "usp_news_000021":  "f664499f773885a5e5e0c75b55036d5e71d7e7d75946660a5238d6673e8330d0",
+                 "usp_news_000022":  "a51583b07f3841218897d1f73dba6415a2b6ca68a771c0e5f7295ca0451c97f1",
+                 "usp_news_000023":  "9cbc0310be0384b12753f0f8ff056e0b65af343983736aaad5d21548289a9b4a",
+                 "usp_news_000024":  "edcaf550deb8f95f5498de69c7aeb264837f200fa2bfd447d4e4d3cfcc089ff4",
+                 "usp_news_000025":  "7e3027827379fedf8e4af157caa024dc6a5e201766e73e9f1c61917a1daf33e5",
+                 "usp_news_000026":  "1c7d17a610607ba6182c03eb863391c05c7b451c19b2ecf96054f442cada49d1",
+                 "usp_news_000027":  "fa5f282e647545f41299399e7e84b027f281ad9936a4803d73a283a6b03793ac",
+                 "usp_news_000028":  "2dec9373542254e4f9b222df476a0b6aa22960047f79341e51432c0e9b68bc9d",
+                 "usp_news_000029":  "1249839de70e52c4c8000039a6cd421016f80173f356747fc9a8ad2cb6ce01fc",
+                 "usp_news_000030":  "21b0e921a596e76a1f249e63123568eedb9b637ab853b19044b3ff22b7a38616",
+                 "usp_news_000031":  "3c93e4965d8203a227e3f50ce0e78f3b667ed2ec3f69a3d558706f221b269f49",
+                 "usp_news_000032":  "de07c44dcc0b7f0b6d818e6d552c6a5b95b0e60090e0e8b319e120a231ab6834",
+                 "usp_news_000033":  "b02c17c7ddc6a9857874af11e33fe84d02b60d7e00df7daf262f08fe235eed3a",
+                 "usp_news_000034":  "392a907c0d009aed5fbf2f51bc9b3aff11f7907d0461b016e16bb7a61b2549e2",
+                 "usp_news_000035":  "a4784216e4d77235fd679370f360d15a3af76ae5bae90457ece2c109247fae86",
+                 "usp_news_000036":  "8f0e864886d8d7c32f62d1e1b722aef4342a26cfc17dd20685fa9c105ac0afcb",
+                 "usp_news_000037":  "8685c565963a6d720ae15dcc9cc02e7750f3174242b7c83b7b7d2be5683c0df0",
+                 "usp_news_000038":  "ebb5b9f2ef69823d2f7465612d2a1cda9033b5d479b7bfe26eb9ed7b7e1dd7f2",
+                 "usp_news_000039":  "7508cdc358ba705a8028e4be5ba5d7d40406ca8322c58e16ef81f1b89d832290",
+                 "usp_news_000040":  "f05df77aef5aebd3f3e43437c8be3f3d9cdc55686b84aac72941911b995a916a",
+                 "usp_news_000041":  "fe633f51a90c89d1c8363b21848ce6a738ccc8553fee46b0cb1970c5a8023e98",
+                 "usp_news_000042":  "bf7ab11758d336e0b8a230f9bdbb1c2fb132b992755e88b7a2255b9d910205b3",
+                 "usp_news_000043":  "e51f1dc9701773c2128f0bf410ae2472c04f043c75972cf9a2bcc485c1256b9e",
+                 "usp_news_000044":  "7030990b10666ee6449d8922dede8653485696a07c82b7b5246f48667352ed92",
+                 "usp_news_000045":  "059d15982848f6df0ff7370fda9e1d23b03b88630f11ca2b8db6378b0774871b",
+                 "usp_news_000046":  "35e82cc80dcbe7408595b140aea6d8041f9ca5cd20fae0b77ae758e124888a98",
+                 "usp_news_000047":  "df73df79b3b27caad87724f47056ffa19064709003e0a197162959781a15fcb7",
+                 "usp_news_000048":  "a8765bed1e822cd0e5cfaa519a6f5664089f6c9d645b2f7a71fa78f408c056d6",
+                 "usp_news_000049":  "b3befb5523446daa6e226a495aa58345a5e38a29334031c71da165062ca53f25",
+                 "usp_news_000050":  "eed5f959d0972a172df6c3e8e1d99d29068915457b4419cff81b910137bd5abb",
+                 "usp_news_000051":  "904242f41d57570adfe48abc6fe9a4ab4f99ccdb823de410870135afc4b96533",
+                 "usp_news_000052":  "1c3eb080ef569c50e801c81d29fed17322306e061bf9a2207d85f42cdc19ab66",
+                 "usp_news_000053":  "f89d50ed6b744c1980569ef659c98b9bb60ef8914714650bd30413d45fea39b3",
+                 "usp_news_000054":  "507ccd0728fa06028962cd3c47f8400da7d63d183b56c802c17e324704ac4261",
+                 "usp_news_000055":  "37a3d83623a696c2854cc675efd8c66b40998b2b6dcf6783d098b9feeb2184d6",
+                 "usp_news_000056":  "11064d18b3fdb87c4ec32a322665d23519442662afe5901ac878ee6096c33354",
+                 "usp_news_000057":  "64b857607546848ed3b13ece34dfff78cd5f68990293d205985e9e2757e79c32",
+                 "usp_news_000058":  "650223f9a6d63727ffc260501599c6978e77142ed5d800127fef33df4f7560f2",
+                 "usp_news_000059":  "27b218dadae8f52b5db9202aee28a6c2d1476df1bbac1e769fd12b79322a416b",
+                 "usp_news_000060":  "102ea5ac8f649a6744d6ca55b9c247930e01d5a6112c3c42d59be71a281048b6",
+                 "usp_news_000061":  "f4c0507778bb54baf03b7359190d70fce9aa51422c7ffa4ccc99b5662e3aa618",
+                 "usp_news_000062":  "e95a256fe1c82c8943b45c64ea7a0a72214ca71087bf123d8310b78ee9b92d28",
+                 "usp_news_000063":  "0062ad1d4a59959862749f0fdf34fbb4a2db3cd5e4b2bf5057bc55f4458d6b26",
+                 "usp_news_000064":  "5ff6ec888bc8c6799bf3bad94b30e89578b5cb48175a74c70e866b0bd1cfd78c",
+                 "usp_news_000065":  "004f97611ef737bbb15daafcb34b3e9fbfb6501424066631adcc8a69193a2577",
+                 "usp_news_000066":  "eb1ff68d8221bcbedf75f856567fbe532f161928044073ee2ea3d741b6518206",
+                 "usp_news_000067":  "42a1c9980c9fade6f4ce9cc86f353258622cbb6ecb2bcf2093d7cbad603e60e6",
+                 "usp_news_000068":  "abdf4dc7fd18e3950e1d3f354edf91a6efe17694e864cf7ad83b281502b9bb96",
+                 "usp_news_000069":  "8c03350dd171cd49c999a594785f413ab1238701ad0ee0bbb85e87bb29b7b07b",
+                 "usp_news_000070":  "b1b1a6010be0d3143640d2df0f09fbf177a96e5191a67984d98683cfeb82d927",
+                 "usp_news_000071":  "502c3e00d7c9120752789644a64c3b92f2449858b4df0456f34bb4432468ef2e",
+                 "usp_news_000072":  "edc13387e541af1d2358aa286b4367f39641ec465812d2981a9e0000960e2bbe",
+                 "usp_news_000073":  "b630409c6e2c447d387ddee6bad08704483b02f2084d765be3f67f5eb248dcae",
+                 "usp_news_000074":  "630a5fe4f8b4eb5b295552559d21e87dda58ee0de4d2f118df2b753410e61211",
+                 "usp_news_000075":  "41fa241643f883573a2a6d3f32d81943b4143b1e30f258bcb93216beaf8d23f2",
+                 "usp_news_000076":  "bb16c635a074fbc3b1dfbf243d8d715c65dd4cde1a440e69ec4a203ba4b0e792",
+                 "usp_news_000077":  "25d5813ef5b134383443fc63584b8b1fba70ccad7a68e8424ba514fbc29a0618",
+                 "usp_news_000078":  "c7d0828806b0b75407f5319ea066aff49ba19bdc76d9d4540be100dd3fd7f407",
+                 "usp_news_000079":  "f02280d134f71a339a188d4bc6214f511a088e6bcf775a288b337a1cdf948cf0",
+                 "usp_news_000080":  "4c2a62e3f9cf0a7c3f14e5ff8054ea44f7efdd5181263484988058ce5eb91359",
+                 "usp_news_000081":  "95ad110644220da2bc4259e6b8eca7750ffaffb52bcf402687deb834f6c114f3",
+                 "usp_news_000082":  "baff2dbf3aa5527ce823fe5d5fded04f9bfd8456815d5c2b851581f8c1990821",
+                 "usp_news_000083":  "e46b6731c5069a4e45fbe2048360c68063a1d4d183fadbf31432b1937f1cf5e1",
+                 "usp_news_000084":  "ab9ead96409efb5aac0c9c4879711b24c27836c1272dee388e501a0a3b427cb5",
+                 "usp_news_000085":  "895b74701c23348d7063348dc685ce63c015f3c45e2b398ec1993c995f9057d5",
+                 "usp_news_000086":  "99844e2e34f6c94b4728ef6d3df7213c08f803d6571832b8907a78b9332f8422",
+                 "usp_news_000087":  "8ea752b724998b6488b18bf9f4644f2bb78708d0eb6e55aa79d8dbbe912343e6",
+                 "usp_news_000088":  "25fb25ad66674ac814d1ff976923a1565b9675183f29c0bef38e1dec93895cbd",
+                 "usp_news_000089":  "cd8d9dda4de540c4558d42983e88618511943de11e3975a8c0817651904f2df4",
+                 "usp_news_000090":  "7d9d3ddcdab0dc4276306fba36efbcf90af71b9afe7d689c21f0d9cf5dad418d",
+                 "usp_news_000091":  "bc360f757dc79591aa306dee95686c1b3fef57bb6f23038ef36e49ea15acfa3b",
+                 "usp_news_000092":  "2e2f849c6361ebaea5fe7fc7f7fb8d5d5a655f751882b35e8bc36b567f134566",
+                 "usp_news_000093":  "b906ac173125a2f75f70d5e1c4c867955b838cfd02b3db406357c24351f2ce46",
+                 "usp_news_000094":  "a5b61bd26522fbc1d71af7960c38d6ac3c9484ffbcffdcd04599b7445fe727d5",
+                 "usp_news_000095":  "81bdbb7f4b65a5b66ebaf82a331d71016ec0bd59a4accb05174cd021123b9986",
+                 "usp_news_000096":  "e92deaf34f4113cdca4aa40606f13d3b46493ac122535719e321f353d3433ad9",
+                 "usp_news_000097":  "8cc25e59c23691d96566e5baae09b9448914c1a552b8e22bc02647c2836c8068",
+                 "usp_news_000098":  "fd8a48d3c0bb7d2c3bdfc54c2a66ae1de287bcf64ce2edd567a99a0ef2ba1f35",
+                 "usp_news_000099":  "afb85b49447afef8fbac5b2967ed23a590f383146d57cb318eb02b800484067c",
+                 "usp_news_000100":  "6d9710acd64592fa7a97f913b97135121443ecaf342aaa3a82d1273812195478"
+             },
+    "acl_states":  [
+                       {
+                           "document_id":  "usp_news_000001",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000002",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000003",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000004",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000005",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000006",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000007",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000008",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000009",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000010",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000011",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000012",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000013",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000014",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000015",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000016",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000017",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000018",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000019",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000020",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000021",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000022",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000023",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000024",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000025",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000026",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000027",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000028",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000029",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000030",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000031",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000032",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000033",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000034",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000035",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000036",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000037",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000038",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000039",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000040",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000041",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000042",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000043",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000044",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000045",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000046",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000047",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000048",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000049",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000050",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000051",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000052",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000053",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000054",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000055",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000056",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000057",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000058",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000059",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000060",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000061",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000062",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000063",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000064",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000065",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000066",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000067",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000068",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000069",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000070",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000071",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000072",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000073",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000074",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000075",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000076",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000077",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000078",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000079",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000080",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000081",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000082",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000083",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000084",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000085",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000086",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000087",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000088",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000089",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000090",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000091",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000092",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000093",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000094",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000095",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000096",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000097",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000098",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000099",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       },
+                       {
+                           "document_id":  "usp_news_000100",
+                           "owner":  "DESKTOP-RGS9RSM\\CodexSandboxOffline",
+                           "access_rules_protected":  true,
+                           "inherited_rules":  0,
+                           "explicit_rules":  3,
+                           "deny_rules":  0
+                       }
+                   ]
+}

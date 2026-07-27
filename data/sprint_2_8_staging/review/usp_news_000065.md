@@ -1,0 +1,84 @@
+# Covid longa: abordagem inédita une 15 especialidades e reduz peregrinação de pacientes
+
+**Autor:** N?o informado  
+**Data:** 2026-05-28T12:06:41+00:00  
+**Categoria:** Ciências  
+**URL:** https://jornal.usp.br/ciencias/covid-longa-abordagem-inedita-une-15-especialidades-e-reduz-peregrinacao-de-pacientes/
+
+---
+
+## Estudo mostra como é possível realizar investigações científicas interdisciplinares e oferecer atendimento para uma condição complexa sem sobrecarregar o paciente
+
+## Texto: Luiza Caires
+
+## Arte: Livia Bortoletto\*
+
+Fadiga crônica, atingindo especialmente mulheres, é um dos eixos de atenção de modelo interdisciplinar criado para mapear os impactos de longo prazo do coronavírus nos pacientes – Foto: wayhomestudio/Magnific
+
+No início da pandemia de covid-19, parecia que estávamos enfrentando uma infecção essencialmente respiratória. O tempo, porém, mostrou uma face muito mais complexa do vírus, capaz de afetar o organismo de forma sistêmica. Quando pacientes já recuperados começaram a relatar sintomas como fadiga crônica, tontura, dores no corpo, falta de ar, refluxo, formigamentos e queda de cabelo, ficou claro que, para muitos, as consequências da doença seriam duradouras.
+
+Embora o reconhecimento oficial da [“covid longa” pela Organização Mundial da Saúde (OMS)](https://brasil.un.org/pt-br/150668-oms-emite-defini%C3%A7%C3%A3o-cl%C3%ADnica-oficial-da-condi%C3%A7%C3%A3o-p%C3%B3s-covid-19) tenha sido um marco, a rotina desses pacientes continuou desafiadora. Muitos têm enfrentado uma verdadeira peregrinação por consultórios, submetidos a exames desconexos por profissionais de especialidades que não se comunicam. Para mudar essa realidade, um grupo de cientistas da Faculdade de Medicina da USP (FMUSP) percebeu que precisava transformar a própria forma de fazer ciência. Eles criaram um [modelo interdisciplinar inédito](https://www.sciencedirect.com/science/article/pii/S1807593226000669?via%3Dihub), desenhado para olhar para o paciente por inteiro.
+
+“O grande desafio na fase aguda da covid era entender como lidar com uma doença tão sistêmica. Quando fomos analisar o pós-covid e as sequelas, vimos que o cuidado também precisaria ser sistêmico. Exigia atenção ao coração, ao pulmão, ao rim… mas, acima de tudo, às conexões entre eles. No nosso corpo, nenhum órgão funciona de forma isolada”, diz a pesquisadora Laura Azevedo ao **Jornal da USP**.
+
+Fazer diferentes especialidades médicas entrarem em acordo sobre métodos e definições não é uma tarefa trivial, mesmo nos principais centros de saúde do mundo. Ainda assim, a equipe da USP conseguiu reunir 22 grupos de pesquisa de 15 especialidades diferentes para investigar os impactos de longo prazo da covid-19.
+
+O modelo, descrito em [um artigo na revista *Clinics*](https://www.sciencedirect.com/science/article/pii/S1807593226000669?via%3Dihub) tendo Laura Azevedo como primeira autora, permitiu que os voluntários fizessem uma bateria abrangente de exames — incluindo tomografias, ecocardiogramas, testes cardiopulmonares, avaliações cognitivas, psiquiátricas, musculares e pulmonares — em apenas dois dias de visitas presenciais. Ao todo, a equipe realizou aproximadamente 11 mil exames.
+
+Em vez de cada especialidade adotar uma rotina isolada, as investigações foram integradas. Se duas áreas precisavam de testes de caminhada semelhantes ou de análises de sangue, os protocolos eram unificados. Assim, o paciente realizava um único procedimento que servia para múltiplos grupos de pesquisa. A estratégia reduziu o desperdício, otimizou o volume de sangue extraído e poupou tempo e desconforto aos participantes.
+
+Laura Sampaio de Moura Azevedo, pesquisadora da FMUSP - Foto: LinkedIn
+
+O estudo comprovou que é possível realizar uma investigação científica profunda sobre uma doença complexa sem sobrecarregar o paciente, servindo de exemplo para a gestão de futuros desafios de saúde pública.
+
+“A implementação [do modelo] demonstrou que a pesquisa interdisciplinar aumenta o engajamento do paciente, reduz a fragmentação e apoia investigações eficientes e de alta qualidade”, escrevem os pesquisadores.
+
+Retorno das pesquisas para os voluntários é considerado prioridade no projeto. Na imagem, cards informativos transmitindo os resultados que estavam sendo obtidos – Foto: Hospital das Clínicas (HC) da FMUSP
+
+## Como funcionou o acompanhamento
+
+A pesquisa integrou um estudo de coorte já em curso pelo Grupo de Estudos da Covid-19 com pacientes do Hospital das Clínicas (HC) da FMUSP. Logo nas primeiras avaliações (feitas de seis a 11 meses após a alta), 83% das pessoas ainda apresentavam pelo menos um sintoma, sendo os mais comuns fadiga, tonturas, dores no corpo e falta de ar (dispneia) — o que justificou a necessidade de um acompanhamento prolongado de quatro anos.
+
+Na etapa mais recente, os pacientes foram avaliados entre 41 e 47 meses após a alta hospitalar, seguindo um fluxo dividido em quatro momentos principais:
+
+1. Teleconsulta (remota): Conduzida para a coleta de dados sociais, histórico de saúde e aplicação de escalas para avaliar sintomas como cansaço, falta de ar, impacto na qualidade de vida e distúrbios do sono.
+2. Primeira visita presencial: O participante passava o período da tarde no hospital para coletas de sangue e urina, eletrocardiograma, testes de função pulmonar, ultrassonografias musculares e testes físicos (como força de preensão e testes de caminhada).
+3. Segunda visita presencial: Dedicada a exames mais complexos durante a manhã e início da tarde, incluindo tomografias, ecocardiograma e testes de esforço cardiorrespiratório, além de avaliações cognitivas, psiquiátricas e auditivas.
+4. Sessão de *feedback*: Uma nova consulta remota na qual os médicos explicavam detalhadamente os resultados de todos os exames ao paciente. Caso fossem encontradas novas alterações ou sequelas graves, ele era imediatamente encaminhado para os cuidados necessários.
+
+“Foi um volume de exames ao qual os pacientes provavelmente não teriam acesso na rede pública”, destaca Laura Azevedo. Ela exemplifica: “Temos aqui um tomógrafo com tecnologia diferenciada”, conta. O equipamento de 320 detectores possibilita a aquisição de exames com dupla energia. No tórax, por exemplo, permite a reconstrução do mapa de iodo, que nos dá uma ideia da perfusão, o fluxo de sangue no pulmão, pela distribuição do iodo no parênquima pulmonar. “Queríamos avaliar as pequenas vias aéreas e checar se o paciente mantinha um quadro de tromboembolismo pulmonar, algo muito frequente na fase aguda”, explica a pesquisadora.
+
+O modelo também permitiu cruzar dados de várias áreas para estudar características complexas da doença, concentrando-se em quatro grandes eixos transversais: a fadiga crônica, a inflamação sistêmica, a perda de função muscular e a suscetibilidade genética.
+
+As descobertas foram centralizadas em um único banco de dados acessível a todos os cientistas do grupo. Agora, cada equipe vai trabalhar com as informações para avaliar resultados específicos, mas a maioria dos artigos gerados deve manter o DNA interdisciplinar do projeto.
+
+“Temos um banco de dados gigantesco. Vamos olhar para tudo isso e planejar o futuro desta pesquisa, sempre focando em políticas públicas e em trazer soluções reais para essas pessoas. Não é apenas diagnosticar e encerrar o contato. De jeito nenhum! Essa filosofia é muito forte no grupo, impulsionada principalmente pelo nosso pesquisador responsável, o professor Carlos Carvalho.”
+
+Professor titular da FMUSP e um dos autores do [artigo](https://www.sciencedirect.com/science/article/pii/S1807593226000669?via%3Dihub), Carlos Roberto Ribeiro Carvalho coordena a iniciativa envolvendo mais de 100 profissionais, entre pesquisadores, estudantes e equipes administrativas. O projeto contou com financiamento da Fundação de Amparo à Pesquisa do Estado de São Paulo (Fapesp) e apoio da sociedade civil, por meio de doações geridas pela Fundação Faculdade de Medicina.
+
+Carlos Carvalho - Foto: Marcos Santos/USP Imagens
+
+Mais informações: laura.sampaio@hc.fm.usp.br, com Laura Azevedo
+
+*\*Estagiária sob orientação de Simone Gomes*
+
+---
+
+## Auditoria editorial
+
+- **Status de valida??o humana:** PENDENTE ? AGUARDANDO MILTON
+- **Regras aplicadas:** `duplicate_leading_title`
+- **Caracteres antes:** 7875
+- **Caracteres depois:** 7784
+- **?ltimo par?grafo jornal?stico preservado:** Sim
+
+### Blocos removidos
+
+### Bloco removido 1
+
+- **Regra:** `duplicate_leading_title`
+- **Motivo:** primeiro bloco repete o campo titulo
+
+```text
+## Covid longa: abordagem inédita une 15 especialidades e reduz peregrinação de pacientes
+```

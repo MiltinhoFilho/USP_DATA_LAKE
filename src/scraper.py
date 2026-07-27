@@ -300,8 +300,22 @@ def extract_content_html(soup: BeautifulSoup) -> str:
         ".content",
     ):
         element = root.select_one(selector)
-        if element and len(element.get_text(strip=True)) > 100:
+        if element and len(element.get_text(strip=True)) > 200:
             return str(element)
+
+    elementor = soup.select_one("main .elementor")
+    if elementor:
+        fragments = []
+        for element in elementor.select(
+            ".elementor-widget-heading, "
+            ".elementor-widget-text-editor, "
+            "figcaption"
+        ):
+            container = element.select_one(":scope > .elementor-widget-container")
+            fragments.append(str(container or element))
+        combined = '<div class="entry-content clr">' + "".join(fragments) + "</div>"
+        if len(BeautifulSoup(combined, "html.parser").get_text(strip=True)) > 200:
+            return combined
 
     main = soup.find("main")
     if main and len(main.get_text(strip=True)) > 100:

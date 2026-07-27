@@ -1,0 +1,12 @@
+requests
+beautifulsoup4
+pandas
+lxml
+minio
+python-dotenv
+markdownify
+PyPDF2
+sentence-transformers
+torch
+psycopg[binary]
+qdrant-client

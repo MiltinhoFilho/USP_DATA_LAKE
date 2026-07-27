@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+requests
+minio
+python-dotenv
+beautifulsoup4

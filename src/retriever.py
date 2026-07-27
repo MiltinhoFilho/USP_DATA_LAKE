@@ -23,12 +23,69 @@ TOKEN_PATTERN = re.compile(r"[a-z0-9]+", re.IGNORECASE)
 QUERY_STOPWORDS = {
     "a", "as", "da", "das", "de", "do", "dos", "e", "em", "foi", "foram",
     "ha", "no", "nos", "o", "os", "pela", "pelo", "por", "qual", "que", "sao",
-    "um", "uma",
-    "abordados", "aparecem", "existem", "jornal", "mencionam", "noticias",
-    "noticia", "publicou", "quais", "relacionadas", "pesquisas", "sobre",
-    "tratam", "usp", "diz",
-}
+    "um", "uma", "mostra", "mostram", "revela", "revelam", "trata", "sobre", "estudos","abordados", "aparecem", "existem", "jornal", "mencionam", "noticias",
+    "noticia", "publicou", "quais", "relacionadas", "pesquisas", "sobre", "qual", "quais", "apontam", "aponta", "oncologia", "pressao alta", "cursos", "curso"
+    "tratam", "usp", "diz", "pesquisas", "saude", "educacao", "cursos", "estudos"  
+     }
 
+DOMAIN_SYNONYMS = {
+    "usp": [
+        "universidade",
+        "universidade de sao paulo",
+        "universidade de são paulo",
+    ],
+
+    "ia": [
+        "inteligencia",
+        "artificial",
+        "inteligencia artificial",
+    ],
+
+
+    "inteligencia artificial": [
+        "ia",
+    ],
+
+    "covid": [
+        "covid19",
+        "coronavirus",
+    ],
+
+    "pesquisa": [
+        "estudo",
+        "cientifico",
+        "científica",
+        "pesquisador",
+        "pesquisadores",
+    ],
+
+    "docente": [
+        "professor",
+        "professora",
+    ],
+
+    "aluno": [
+        "estudante",
+        "graduando",
+        "graduanda",
+    ],
+
+    "ribeirao preto": [
+         "campus ribeirao preto",
+    ],
+
+    "esalq": [
+        "escola superior de agricultura luiz de queiroz",
+    ],
+
+    "fmrp": [
+    "faculdade de medicina de ribeirao preto",
+    ],
+
+    "iqsc": [
+    "instituto de quimica de sao carlos",
+    ],
+}
 
 def _env_bool(name: str, default: bool) -> bool:
     value = os.getenv(name)
@@ -82,6 +139,44 @@ def tokenize(text: str) -> list[str]:
 def tokenize_query(text: str) -> list[str]:
     """Remove apenas palavras de enquadramento, mantendo os termos temáticos."""
     return [term for term in tokenize(text) if term not in QUERY_STOPWORDS]
+
+
+
+    """Normaliza acentos e pontuação, preservando siglas como IA como token ``ia``."""
+    normalized = unicodedata.normalize("NFKD", text or "")
+    normalized = "".join(
+        char for char in normalized
+        if not unicodedata.combining(char)
+    )
+    return TOKEN_PATTERN.findall(normalized.lower())
+
+
+def tokenize_query(text: str) -> list[str]:
+    """Remove apenas palavras de enquadramento, mantendo os termos temáticos."""
+    return [
+        term
+        for term in tokenize(text)
+        if term not in QUERY_STOPWORDS
+    ]
+
+
+def expand_query_terms(terms: Iterable[str]) -> list[str]:
+    """
+    Expande termos da consulta com equivalências específicas do domínio.
+
+    Mantém os termos originais, adiciona os equivalentes configurados em
+    DOMAIN_SYNONYMS e remove duplicatas preservando a ordem.
+    """
+    expanded: list[str] = []
+
+    for term in terms:
+        expanded.append(term)
+
+        for synonym in DOMAIN_SYNONYMS.get(term, []):
+            expanded.extend(tokenize(synonym))
+
+    return list(dict.fromkeys(expanded))
+
 
 
 def extract_query_terms(question: str) -> list[str]:
@@ -336,10 +431,13 @@ class BM25Index:
                     for term, df in document_frequency.items()}
 
     def search(self, question: str, limit: int) -> list[dict[str, Any]]:
-        query_terms = tokenize_query(question)
+        original_terms = tokenize_query(question)
+        query_terms = expand_query_terms(original_terms)
+
         if not query_terms or not self.size or self.average_length <= 0:
             return []
         scores: list[tuple[float, int]] = []
+
         for identifier, frequencies in self.term_frequencies.items():
             score = 0.0
             length_ratio = self.lengths[identifier] / self.average_length

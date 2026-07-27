@@ -3,10 +3,12 @@
 from __future__ import annotations
 
 import argparse
+from difflib import SequenceMatcher
 import html
 import io
 import json
 import re
+import unicodedata
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable, Iterator
@@ -51,12 +53,44 @@ NOISE_LINE_PATTERNS = (
     r"^publicidade$",
 )
 
+KNOWN_BOILERPLATE_PATTERNS = (
+    re.compile(
+        r"(?im)^\[Pular barra de compartilhamento\]\(\s*#main-content\s*\)\s*$"
+    ),
+    re.compile(
+        r"(?ims)"
+        r"^\s*---\s*\n+"
+        r"\*\*Jornal da USP no Ar\*\*\s*\n+"
+        r"\[Jornal da USP no Ar\]\("
+        r"https?://jornal\.usp\.br/editorias/radio-usp/jornal-da-usp-no-ar/"
+        r"\)\s+no ar veiculado pela Rede USP de Rádio,.*\Z"
+    ),
+)
+
 
 @dataclass(frozen=True)
 class BronzeDocument:
     object_name: str
     documento_id: str
     payload: dict
+
+
+@dataclass(frozen=True)
+class EditorialRemoval:
+    """Bloco não editorial removido de uma extremidade do texto."""
+
+    rule: str
+    reason: str
+    text: str
+
+
+@dataclass(frozen=True)
+class EditorialRefinement:
+    """Resultado auditável do refinamento editorial."""
+
+    original_text: str
+    text: str
+    removals: tuple[EditorialRemoval, ...]
 
 
 def _document_id_from_object(object_name: str) -> str:
@@ -261,6 +295,14 @@ def _normalize_markdown(text: str) -> str:
     return _repair_mojibake(re.sub(r"\n{3,}", "\n\n", cleaned_text))
 
 
+def _remove_known_boilerplates(markdown: str) -> str:
+    """Remove somente resíduos institucionais confirmados no corpus auditado."""
+    cleaned = markdown
+    for pattern in KNOWN_BOILERPLATE_PATTERNS:
+        cleaned = pattern.sub("", cleaned)
+    return cleaned
+
+
 def limpar_html_para_markdown(html_text: str) -> str:
     """Remove common page noise and convert the article body to Markdown."""
     if not html_text:
@@ -279,7 +321,190 @@ def limpar_html_para_markdown(html_text: str) -> str:
         bullets="-",
         strip=("img",),
     )
-    return _normalize_markdown(markdown)
+    return _normalize_markdown(_remove_known_boilerplates(markdown))
+
+
+def _editorial_key(value: str) -> str:
+    """Normaliza títulos, autores e blocos Markdown para comparação."""
+    value = re.sub(r"^#{1,6}\s+", "", value.strip())
+    value = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", value)
+    value = value.replace("\\", "").replace("*", "")
+    value = unicodedata.normalize("NFKD", value)
+    value = "".join(
+        character
+        for character in value
+        if not unicodedata.combining(character)
+    )
+    value = re.sub(r"[^\w]+", " ", value.casefold())
+    return re.sub(r"\s+", " ", value).strip()
+
+
+def _split_editorial_blocks(value: str) -> list[str]:
+    return [
+        block.strip()
+        for block in re.split(r"\n[ \t]*\n+", value)
+        if block.strip()
+    ]
+
+
+def remove_duplicate_leading_title(
+    blocks: list[str],
+    title: str,
+) -> tuple[list[str], EditorialRemoval | None]:
+    """Remove somente o primeiro bloco quando ele repete o título documental."""
+    if not blocks or not title.strip():
+        return blocks, None
+    candidate = _editorial_key(blocks[0])
+    expected = _editorial_key(title)
+    if not candidate or not expected:
+        return blocks, None
+    equivalent = candidate == expected or (
+        SequenceMatcher(None, candidate, expected, autojunk=False).ratio() >= 0.97
+        and set(candidate.split()) == set(expected.split())
+    )
+    if not equivalent:
+        return blocks, None
+    removal = EditorialRemoval(
+        rule="duplicate_leading_title",
+        reason="primeiro bloco repete o campo titulo",
+        text=blocks[0],
+    )
+    return blocks[1:], removal
+
+
+def remove_duplicate_byline(
+    blocks: list[str],
+    author: str,
+) -> tuple[list[str], EditorialRemoval | None]:
+    """Remove byline inicial somente quando ela coincide com o campo autor."""
+    if not blocks or not author.strip():
+        return blocks, None
+    author_key = _editorial_key(author)
+    for index, block in enumerate(blocks[:3]):
+        first_line = block.splitlines()[0].strip()
+        if not re.match(r"(?i)^por(?:\s|:)", first_line):
+            continue
+        byline_key = _editorial_key(
+            re.sub(r"(?i)^por(?:\s|:)+", "", first_line)
+        )
+        if author_key and (
+            author_key == byline_key
+            or author_key in byline_key
+            or byline_key in author_key
+        ):
+            removal = EditorialRemoval(
+                rule="duplicate_byline",
+                reason="byline inicial repete o campo autor",
+                text=block,
+            )
+            return blocks[:index] + blocks[index + 1 :], removal
+    return blocks, None
+
+
+def remove_generic_editorial_notices(
+    blocks: list[str],
+) -> tuple[list[str], tuple[EditorialRemoval, ...]]:
+    """Remove avisos institucionais genéricos apenas da cauda do artigo."""
+    removals: list[EditorialRemoval] = []
+    while blocks:
+        key = _editorial_key(blocks[-1])
+        opinion_notice = (
+            "opinioes expressas nos artigos publicados" in key
+            and "inteira responsabilidade de seus autores" in key
+        )
+        if not opinion_notice:
+            break
+        removals.append(
+            EditorialRemoval(
+                rule="generic_opinion_notice",
+                reason="aviso institucional genérico após o artigo",
+                text=blocks.pop(),
+            )
+        )
+    return blocks, tuple(removals)
+
+
+def remove_generic_reuse_credits(
+    blocks: list[str],
+) -> tuple[list[str], tuple[EditorialRemoval, ...]]:
+    """Remove política geral de reutilização somente quando terminal."""
+    removals: list[EditorialRemoval] = []
+    if not blocks:
+        return blocks, ()
+    key = _editorial_key(blocks[-1])
+    reuse_notice = (
+        "politica de uso" in key
+        and "reproducao de materias" in key
+        and (
+            "arquivos de video" in key
+            or "fotos devem ser creditadas" in key
+        )
+    )
+    if reuse_notice:
+        removals.append(
+            EditorialRemoval(
+                rule="generic_reuse_credits",
+                reason="política institucional geral após o artigo",
+                text=blocks.pop(),
+            )
+        )
+        if blocks and re.fullmatch(r"[-_*\\\s]+", blocks[-1]):
+            removals.append(
+                EditorialRemoval(
+                    rule="generic_reuse_separator",
+                    reason="separador do bloco institucional removido",
+                    text=blocks.pop(),
+                )
+            )
+    return blocks, tuple(removals)
+
+
+def refine_editorial_text(
+    text: str,
+    *,
+    title: str = "",
+    author: str = "",
+) -> EditorialRefinement:
+    """Refina somente duplicações e avisos comprovados nas extremidades."""
+    original = text.strip()
+    blocks = _split_editorial_blocks(original)
+    removals: list[EditorialRemoval] = []
+
+    blocks, removal = remove_duplicate_leading_title(blocks, title)
+    if removal is not None:
+        removals.append(removal)
+    blocks, removal = remove_duplicate_byline(blocks, author)
+    if removal is not None:
+        removals.append(removal)
+    blocks, removed = remove_generic_editorial_notices(blocks)
+    removals.extend(removed)
+    blocks, removed = remove_generic_reuse_credits(blocks)
+    removals.extend(removed)
+
+    refined = "\n\n".join(blocks).strip()
+    return EditorialRefinement(original, refined, tuple(removals))
+
+
+def extract_clean_text(
+    html_text: str,
+    *,
+    title: str = "",
+    author: str = "",
+) -> str:
+    """Extrai texto editorial legível sem modificar o HTML de origem.
+
+    O contrato público reutiliza a limpeza consolidada da etapa Silver:
+    elementos não editoriais são removidos e parágrafos, subtítulos, listas,
+    links e Unicode são preservados em Markdown legível.
+    """
+    if not isinstance(html_text, str):
+        raise TypeError("html_text deve ser uma string")
+    clean_text = limpar_html_para_markdown(html_text)
+    return refine_editorial_text(
+        clean_text,
+        title=title,
+        author=author,
+    ).text
 
 
 def _clean_plain_value(value: object) -> str:
@@ -288,12 +513,36 @@ def _clean_plain_value(value: object) -> str:
     return _normalize_markdown(str(value))
 
 
-def montar_texto_limpo(article: dict) -> str:
+def _comparable_heading(value: str) -> str:
+    value = re.sub(r"^#{1,6}\s+", "", value.strip())
+    value = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", value)
+    value = unicodedata.normalize("NFKC", value)
+    value = "".join(
+        character
+        for character in value
+        if unicodedata.category(character) != "Cf"
+    )
+    return re.sub(r"\s+", " ", value).strip().casefold()
+
+
+def _body_starts_with_title(content: str, title: str) -> bool:
+    """Detecta o título entre as primeiras linhas editoriais do JSON."""
+    expected = _comparable_heading(title)
+    if not expected:
+        return False
+    initial_lines = [line for line in content.splitlines() if line.strip()][:3]
+    return any(_comparable_heading(line) == expected for line in initial_lines)
+
+
+def montar_texto_limpo(article: dict, *, preserve_external_pdf: bool = False) -> str:
     titulo = _clean_plain_value(article.get("titulo"))
     conteudo = limpar_html_para_markdown(str(article.get("conteudo") or ""))
 
     parts = []
-    if titulo:
+    if titulo and (
+        preserve_external_pdf
+        or not _body_starts_with_title(conteudo, titulo)
+    ):
         parts.append(f"# {titulo}")
     if conteudo:
         parts.append(conteudo)
@@ -307,7 +556,10 @@ def transformar_documento(
     overlap: int = DEFAULT_OVERLAP,
 ) -> list[dict]:
     article = document.payload
-    texto_limpo = montar_texto_limpo(article)
+    texto_limpo = montar_texto_limpo(
+        article,
+        preserve_external_pdf=Path(document.object_name).suffix.lower() == ".pdf",
+    )
     chunks = criar_chunks(texto_limpo, chunk_size=chunk_size, overlap=overlap)
 
     records: list[dict] = []

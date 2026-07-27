@@ -90,7 +90,7 @@ def _point_id(record: dict) -> int:
 
 
 def _payload(record: dict, postgres_id: int) -> dict:
-    return {
+    payload = {
         "postgres_id": postgres_id,
         "documento_id": record.get("documento_id"),
         "chunk_id": record.get("chunk_id"),
@@ -99,6 +99,16 @@ def _payload(record: dict, postgres_id: int) -> dict:
         "categoria": record.get("categoria"),
         "source_object": record.get("source_object"),
     }
+    for key in (
+        "source_type",
+        "source_objects",
+        "lineage_id",
+        "canonical_sha256",
+        "schema_version",
+    ):
+        if record.get(key) is not None:
+            payload[key] = record[key]
+    return payload
 
 
 def upsert_embeddings(

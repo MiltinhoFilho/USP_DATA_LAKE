@@ -1,0 +1,10 @@
+﻿{
+    "created_at":  "2026-07-24T17:06:08.9351836-03:00",
+    "source":  "C:\\Projetos\\usp-data-lake-main\\bronze\\raw",
+    "backup":  "C:\\Projetos\\usp-data-lake-main\\backups\\sprint_2_9\\20260724T170605\\bronze\\raw",
+    "file_count":  0,
+    "all_valid":  true,
+    "files":  {
+
+              }
+}

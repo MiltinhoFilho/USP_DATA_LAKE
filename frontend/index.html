@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Chatbot do Jornal da USP baseado em recuperação aumentada por geração.">
+  <title>Chatbot Jornal da USP</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="brand">
+        <img class="brand__logo" src="assets/logo.png" alt="Logo do Chatbot Jornal da USP">
+        <div class="brand__copy">
+          <h1>Chatbot Jornal da USP</h1>
+          <p>Perguntas e respostas baseadas em um recorte de 100 notícias</p>
+        </div>
+      </div>
+
+      <div class="header-tools">
+        <div class="status-group" aria-label="Estado dos serviços">
+          <span id="systemStatus" class="status-pill status-pill--checking" title="Verificando a RAG API">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span class="status-label">Verificando sistema</span>
+          </span>
+          <span id="modelStatus" class="status-pill status-pill--neutral" title="O modelo só será confirmado após uma geração bem-sucedida">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span class="status-label">Serviço não verificado</span>
+          </span>
+        </div>
+
+        <div class="header-actions">
+          <button id="newConversationButton" class="button button--secondary" type="button">
+            <span aria-hidden="true">＋</span> Nova conversa
+          </button>
+          <button id="clearChatButton" class="button button--ghost" type="button">
+            Limpar chat
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="chat-main">
+      <section class="chat-toolbar" aria-label="Informações da conversa">
+        <div>
+          <span class="eyebrow">Conversa atual</span>
+          <strong id="messageCounter">0 mensagens</strong>
+        </div>
+        <p class="corpus-notice">
+          Esta demonstração utiliza somente um recorte de 100 notícias atualmente indexadas
+          e não representa todo o acervo do Jornal da USP.
+        </p>
+      </section>
+
+      <section id="chatMessages" class="chat-messages" role="log" aria-live="polite" aria-relevant="additions">
+        <div id="welcomeState" class="welcome-state">
+          <div class="welcome-state__icon" aria-hidden="true">
+            <img src="assets/logo.png" alt="">
+          </div>
+          <span class="eyebrow">Assistente de notícias</span>
+          <h2>O que você gostaria de saber?</h2>
+          <p>Faça uma pergunta sobre as 100 notícias atualmente indexadas no Data Lake.</p>
+          <div class="suggestions" aria-label="Sugestões de perguntas">
+            <button class="suggestion" type="button">Quais assuntos aparecem nas notícias sobre inteligência artificial?</button>
+            <button class="suggestion" type="button">O que o acervo diz sobre saúde e pesquisas médicas?</button>
+            <button class="suggestion" type="button">Há notícias relacionadas à educação ou universidades?</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="composer-area">
+      <form id="questionForm" class="composer">
+        <label class="sr-only" for="questionInput">Digite sua pergunta</label>
+        <textarea
+          id="questionInput"
+          name="question"
+          rows="1"
+          minlength="3"
+          maxlength="2000"
+          placeholder="Pergunte sobre as notícias indexadas..."
+          autocomplete="off"
+          required
+        ></textarea>
+        <button id="sendButton" class="send-button" type="submit" aria-label="Enviar pergunta">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4.5 11.5 19 4l-5.4 15-2.7-5.2-6.4-2.3Zm6.4 2.3L19 4"></path>
+          </svg>
+          <span>Enviar</span>
+        </button>
+      </form>
+      <p class="composer-hint">Pressione <kbd>Enter</kbd> para enviar e <kbd>Shift</kbd> + <kbd>Enter</kbd> para quebrar a linha.</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
